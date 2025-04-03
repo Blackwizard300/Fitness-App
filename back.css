@@ -1,0 +1,182 @@
+@font-face {
+    font-family: "Inknut Antiqua";
+    src: url("path-to-font/InknutAntiqua-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Jersey 25";
+    src: url("path-to-font/Jersey25.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  :root {
+    --color-background: #111517;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray: #d9d9d9;
+    --color-profile-bg: #f5ebeb;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-background);
+  }
+  
+  /* Header Styles */
+  .header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.52);
+    padding: 10px 0;
+  }
+  
+  .header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+  
+  .brand-logo {
+    width: 72px;
+    height: 72px;
+  }
+  
+  .brand-name {
+    color: var(--color-white);
+    font-family: "Inknut Antiqua", serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  /* Navigation Styles */
+  .main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-link {
+    color: var(--color-white);
+    font-family: "Inknut Antiqua", serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .nav-link-active {
+    color: var(--color-black);
+    background-color: var(--color-gray);
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+  
+  .profile-icon {
+    width: 54px;
+    height: 54px;
+    background-color: var(--color-profile-bg);
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 40px 82px;
+  }
+  
+  .workout-container {
+    display: flex;
+    gap: 142px;
+  }
+  
+  .workout-details {
+    flex: 1;
+    background-color: var(--color-gray);
+    padding: 40px;
+  }
+  
+  .workout-title {
+    color: var(--color-black);
+    font-family: "Jersey 25", sans-serif;
+    font-size: 64px;
+    margin: 0 0 49px 0;
+  }
+  
+  .exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .exercise-item {
+    color: var(--color-black);
+    font-family: "Jersey 25", sans-serif;
+    font-size: 40px;
+  }
+  
+  .workout-image {
+    width: 458px;
+    height: 787px;
+    object-fit: cover;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 991px) {
+    .main-nav {
+      display: none;
+    }
+  
+    .workout-container {
+      flex-direction: column;
+      padding: 0 40px;
+      gap: 40px;
+    }
+  
+    .workout-image {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .main-content {
+      padding: 40px 20px;
+    }
+  
+    .workout-details {
+      padding: 20px;
+    }
+  
+    .workout-title {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+  
+    .exercise-item {
+      font-size: 32px;
+    }
+  }
+  

@@ -1,0 +1,186 @@
+.page-container {
+    background-color: #111517;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .main-header {
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 26px;
+    background-color: rgba(0, 0, 0, 0.52);
+  }
+  
+  .brand-container {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+  
+  .brand-logo {
+    width: 72px;
+    height: 72px;
+  }
+  
+  .brand-name {
+    color: #fff;
+    font-family: "Jersey M54", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 130px;
+    margin-right: 40px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    font-family: "Jersey M54", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #d9d9d9;
+    transform: translateY(-2px);
+  }
+  
+  .nav-link:active {
+    transform: translateY(1px);
+  }
+  
+  .nav-link.active {
+    color: #111517;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #d9d9d9;
+  }
+  
+  .nav-link.active:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .nav-link.active:active {
+    background-color: #c0c0c0;
+  }
+  
+  .user-profile {
+    width: 54px;
+    height: 54px;
+  }
+  
+  .content-section {
+    padding: 40px 82px;
+  }
+  
+  .workout-container {
+    display: flex;
+    gap: 7px;
+    border-radius: 4px;
+    background-color: #d9d9d9;
+  }
+  
+  .workout-title {
+    color: #000;
+    font-family: "Jersey M54", sans-serif;
+    font-size: 64px;
+    margin: 56px 0 0 54px;
+  }
+  
+  .exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    padding: 93px 0 0 25px;
+  }
+  
+  .exercise-item {
+    color: #000;
+    font-family: "Jersey M54", sans-serif;
+    font-size: 40px;
+    margin: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .exercise-item:hover {
+    color: #333;
+    padding-left: 10px;
+  }
+  
+  .exercise-item:active {
+    color: #666;
+  }
+  
+  .user-profile {
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .user-profile:hover {
+    transform: scale(1.1);
+  }
+  
+  .user-profile:active {
+    transform: scale(0.95);
+  }
+  
+  .workout-image {
+    width: 540px;
+    height: 782px;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 991px) {
+    .workout-container {
+      flex-direction: column;
+    }
+  
+    .workout-image {
+      width: 100%;
+      height: auto;
+    }
+  
+    .main-nav {
+      gap: 60px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .main-header {
+      padding: 0 15px;
+    }
+  
+    .brand-name {
+      font-size: 24px;
+    }
+  
+    .main-nav {
+      display: none;
+    }
+  
+    .workout-title {
+      font-size: 48px;
+      margin: 30px 0 0 20px;
+    }
+  
+    .exercise-list {
+      padding: 40px 15px;
+    }
+  
+    .exercise-item {
+      font-size: 24px;
+    }
+  }
+  
