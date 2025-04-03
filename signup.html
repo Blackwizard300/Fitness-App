@@ -5,12 +5,12 @@
 </head>
 <main class="signup-container">
   <h1 class="signup-title">Sign Up</h1>
-  <form class="signup-form">
+  <form class="signup-form" action="./register.php" method="post">
     <div class="form-fields">
       <div class="input-wrapper">
         <input
           type="text"
-          class="form-input"
+          class="form-input" name="firstname"
           required
           aria-label="First Name"
           placeholder=" "
@@ -24,7 +24,7 @@
       <div class="input-wrapper">
         <input
           type="text"
-          class="form-input"
+          class="form-input" name="lastname"
           required
           aria-label="Last Name"
           placeholder=" "
@@ -38,7 +38,7 @@
       <div class="input-wrapper">
         <input
           type="email"
-          class="form-input"
+          class="form-input" name="email"
           required
           aria-label="Email"
           placeholder=" "
@@ -52,7 +52,7 @@
       <div class="input-wrapper">
         <input
           type="password"
-          class="form-input"
+          class="form-input" name="password"
           required
           aria-label="Password"
           placeholder=" "
@@ -66,7 +66,7 @@
       <div class="input-wrapper">
         <input
           type="tel"
-          class="form-input"
+          class="form-input" name="phone"
           required
           aria-label="Phone number"
           placeholder=" "

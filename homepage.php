@@ -1,3 +1,12 @@
+<?php
+session_start(); // Start the session
+
+// Check if the user is logged in
+
+// Retrieve the stored session values
+$firstname = $_SESSION['user_name'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +24,20 @@
         </div>
         <nav>
             <a href="#">Home</a>
-            <a href="#">Meal</a>
+            <a href="#">Meal</a>    <a href="./logout.php">Logout</a>
+
             <a href="#">About us</a>
             <a href="workout.html">Workout</a>
-            <a href="login.html" class="login">Login</a>
+            <?php
+            if($firstname == null){
+                echo '<a href="login.html" class="login">Login</a>';
+
+            }
+            
+            else{
+                echo $firstname;
+
+            }?>
             
         </nav>
     </header>

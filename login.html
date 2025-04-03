@@ -5,12 +5,12 @@
 </head>
 <main class="login-container">
   <h1 class="login-title">Log In</h1>
-  <form class="login-form">
+  <form class="login-form" action="./login.php" method="post">
     <div class="form-fields">
       <div class="input-wrapper">
         <input
           type="email"
-          class="form-input"
+          class="form-input" name="email"
           required
           aria-label="Email"
           placeholder=" "
@@ -23,7 +23,7 @@
 
       <div class="input-wrapper">
         <input
-          type="password"
+          type="password" name="password"
           class="form-input"
           required
           aria-label="Password"
