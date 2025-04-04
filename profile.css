@@ -1,0 +1,168 @@
+.navigation-bar {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.52);
+    display: flex;
+    width: 100%;
+    padding: 8px 22px;
+    align-items: flex-start;
+    gap: 20px;
+    font-family:
+      "Inknut Antiqua",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-weight: 700;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 991px) {
+    .navigation-bar {
+      max-width: 100%;
+      padding-left: 20px;
+    }
+  }
+  
+  .logo-container {
+    align-self: start;
+    display: flex;
+    align-items: stretch;
+    gap: 11px;
+    font-size: 32px;
+  }
+  
+  .logo-image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 72px;
+    align-self: start;
+    flex-shrink: 0;
+  }
+  
+  .brand-name {
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: stretch;
+    gap: 40px 67px;
+    font-size: 24px;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 991px) {
+    .nav-links {
+      max-width: 100%;
+    }
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    flex-grow: 1;
+  }
+  
+  .menu-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 54px;
+    align-self: start;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+  
+  .profile-container {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 168px;
+    width: 767px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: start;
+    font-family:
+      "Jersey 25",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-weight: 400;
+  }
+  
+  .profile-heading {
+    font-size: 64px;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .profile-heading {
+      font-size: 40px;
+    }
+  }
+  
+  .profile-picture {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 293px;
+    margin-top: 32px;
+    max-width: 100%;
+  }
+  
+  .profile-details {
+    align-self: stretch;
+    display: flex;
+    margin-top: 39px;
+    align-items: start;
+    gap: 40px 100px;
+    font-size: 40px;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 991px) {
+    .profile-details {
+      max-width: 100%;
+    }
+  }
+  
+  .details-column {
+    display: flex;
+    margin-top: 8px;
+    flex-direction: column;
+    align-items: start;
+    flex: 1;
+  }
+  
+  .detail-label {
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+    margin-top: 32px;
+  }
+  
+  .detail-label:first-child {
+    margin-top: 0;
+  }
+  
+  body {
+    background-color: rgba(17, 21, 23, 1);
+    padding-bottom: 195px;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  @media (max-width: 991px) {
+    body {
+      padding-bottom: 100px;
+    }
+  }
+  
