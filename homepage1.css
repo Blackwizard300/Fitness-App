@@ -4,26 +4,75 @@ body {
     background-color: #1a1a1a;
     color: #fff;
 }
-header {
+
+  /* Navigation Header */
+  .nav-header {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.52);
+    align-self: stretch;
     display: flex;
+    width: 100%;
+    padding: 8px 30px;
+    align-items: start;
+    gap: 20px;
+    font-family:
+      "Inknut Antiqua",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #000;
-}
-header img {
-    height: 50px;
-}
-nav a {
-    color: #fff;
-    margin: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: stretch;
+    gap: 11px;
+  }
+  
+  .brand-logo {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 72px;
+    align-self: start;
+  }
+  
+  .brand-name {
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  .main-nav {
+    display: flex;
+    margin-top: 5px;
+    align-items: start;
+    gap: 49px;
+    font-size: 24px;
+  }
+  
+  .nav-link {
+    color: white;
     text-decoration: none;
-    font-size: 18px;
-}
-nav a:hover {
-    color: #e55d4d;
-}
-.profile-icon {
+    transition:
+      color 0.3s ease,
+      transform 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    color: rgba(217, 217, 217, 1);
+    transform: translateY(-2px);
+  }
+  
+  .nav-link:active {
+    transform: translateY(0);
+  }
+  
+  .profile-icon {
     aspect-ratio: 0.73;
     object-fit: contain;
     object-position: center;

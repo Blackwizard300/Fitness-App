@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&display=swap"); */
 
 :root {
   --primary-bg: #111517;
@@ -14,43 +14,90 @@ body {
   background-color: var(--primary-bg);
 }
 
-.header {
-  height: 88px;
-  display: flex;
-  align-items: center;
-  padding: 0 50px;
-  position: relative;
-  background-color: var(--header-bg);
-}
-
-.logo {
-  width: 72px;
-  height: 72px;
-  margin-right: 11px;
-}
-
-.brand-name {
-  color: var(--text-white);
-  font-family: "Inknut Antiqua", serif;
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.navigation {
-  display: flex;
-  gap: 48px;
-  margin-left: auto;
-}
-
-.nav-link {
-  color: var(--text-white);
-  font-family: "Inknut Antiqua", serif;
-  font-size: 24px;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-}
+  /* Navigation Header */
+  .nav-header {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.52);
+    align-self: stretch;
+    display: flex;
+    width: 100%;
+    padding: 8px 30px;
+    align-items: start;
+    gap: 20px;
+    font-family:
+      "Inknut Antiqua",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: stretch;
+    gap: 11px;
+  }
+  
+  .brand-logo {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 72px;
+    align-self: start;
+  }
+  
+  .brand-name {
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  .main-nav {
+    display: flex;
+    margin-top: 5px;
+    align-items: start;
+    gap: 49px;
+    font-size: 24px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    transition:
+      color 0.3s ease,
+      transform 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    color: rgba(217, 217, 217, 1);
+    transform: translateY(-2px);
+  }
+  
+  .nav-link:active {
+    transform: translateY(0);
+  }
+  
+  .profile-icon {
+    aspect-ratio: 0.73;
+    object-fit: contain;
+    object-position: center;
+    width: 54px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .profile-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .profile-icon:active {
+    transform: scale(0.95);
+  }
 
 .main-content {
   background: url("https://cdn.builder.io/api/v1/image/assets/TEMP/a3bd1525ed2e58c7083355956668a15379c99241")

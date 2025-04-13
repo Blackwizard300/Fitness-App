@@ -1,25 +1,8 @@
 <link rel="stylesheet" href="workout.css" />
-<header class="nav-header">
-  <div class="brand">
-    <img
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a2b279d63205da0f1533bc9da9c25df9ebca245?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-      alt="Vask Fitness Logo"
-      class="brand-logo"
-    />
-    <h1 class="brand-name">VASK FITNESS</h1>
-  </div>
-  <nav class="main-nav">
-    <a href="#" class="nav-link">Home</a>
-    <a href="#" class="nav-link">Meal</a>
-    <a href="#" class="nav-link">About us</a>
-    <a href="#" class="nav-link">Workout</a>
-    <img
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/13ee4f60030d35b5687c38262d8a815b99cc42eb?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-      alt="User Profile"
-      class="profile-icon"
-    />
-  </nav>
-</header>
+
+  <div class="main-nav" id="navbar">
+  
+</div>
 
 <main class="page-container">
   <section class="workout-section">
@@ -108,3 +91,13 @@
     </div>
   </section>
 </main>
+<script>
+  fetch('navbar.php')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error loading navbar:', error);
+    });
+</script>

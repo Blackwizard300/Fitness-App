@@ -10,7 +10,7 @@
       />
       <h1 class="brand-name">VASK FITNESS</h1>
     </div>
-    <div class="nav-links">
+    <div class="nav-links" id="navbar">
       <a href="#" class="nav-link">Home</a>
       <a href="#" class="nav-link">Meal</a>
       <a href="#" class="nav-link">About us</a>
@@ -45,4 +45,13 @@
       </div>
     </section>
   </main>
-  
+  <script>
+    fetch('navbar.php')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+      });
+  </script>

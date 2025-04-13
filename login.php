@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->num_rows > 0 && password_verify($password, $hashed_password)) {
         $_SESSION["user_id"] = $id;
         $_SESSION["user_name"] = $firstname.' '. $lastname;
-        header("Location: homepage.php"); // Redirect to dashboard
+        header("Location: homepage.html"); // Redirect to dashboard
         exit();
     } else {
         echo "Invalid email or password!";

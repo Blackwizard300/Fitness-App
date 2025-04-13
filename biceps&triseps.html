@@ -11,11 +11,8 @@
         />
         <h1 class="brand-name">VASK FITNESS</h1>
       </div>
-      <nav class="main-nav">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">Meal</a>
-        <a href="#" class="nav-link">About us</a>
-        <a href="#" class="nav-link nav-link-active">Workout</a>
+      <nav class="main-nav" id="navbar">
+       
       </nav>
       <div class="profile-icon">
         <svg
@@ -67,4 +64,13 @@
       />
     </div>
   </main>
-  
+  <script>
+    fetch('navbar.php')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+      });
+  </script>

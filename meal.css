@@ -19,66 +19,89 @@
     min-height: 100vh;
   }
   
-  .main-header {
-    width: 100%;
-    height: 91px;
+  /* Navigation Header */
+  .nav-header {
+    border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.52);
-  }
-  
-  .header-content {
+    align-self: stretch;
     display: flex;
-    align-items: center;
+    width: 100%;
+    padding: 8px 30px;
+    align-items: start;
+    gap: 20px;
+    font-family:
+      "Inknut Antiqua",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 26px;
-    height: 100%;
+    box-sizing: border-box;
   }
   
-  .logo-container {
+  .brand {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 11px;
   }
   
-  .logo-image {
+  .brand-logo {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
     width: 72px;
-    height: 72px;
+    align-self: start;
   }
   
-  .logo-text {
-    color: #fff;
-    font-family: "Inknut Antiqua", serif;
+  .brand-name {
     font-size: 32px;
-    font-weight: 700;
     margin: 0;
   }
   
   .main-nav {
     display: flex;
-    align-items: center;
-    gap: 44px;
+    margin-top: 5px;
+    align-items: start;
+    gap: 49px;
+    font-size: 24px;
   }
   
   .nav-link {
-    color: #fff;
-    font-family: "Inknut Antiqua", serif;
-    font-size: 24px;
-    font-weight: 700;
+    color: white;
     text-decoration: none;
+    transition:
+      color 0.3s ease,
+      transform 0.2s ease;
   }
   
-  .nav-link-active {
-    width: 95px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #d9d9d9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .nav-link:hover {
+    color: rgba(217, 217, 217, 1);
+    transform: translateY(-2px);
+  }
+  
+  .nav-link:active {
+    transform: translateY(0);
   }
   
   .profile-icon {
+    aspect-ratio: 0.73;
+    object-fit: contain;
+    object-position: center;
     width: 54px;
-    height: 54px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .profile-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .profile-icon:active {
+    transform: scale(0.95);
   }
   
   .meal-planner {

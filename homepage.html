@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vask Fitness</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+<div class="main-nav" id="navbar">
+  
+  </div>
+    <section class="hero">
+        <div>
+            <h2>Keep your</h2>
+            <h1>Body Fit &amp; Strong</h1>
+            <p>In here we will help you to shape and build your ideal body and live your life to the fullest.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+        <img src="C:\Users\Nitro\OneDrive\Desktop\home-img.png" alt="Fit Man">
+    </section>
+    <script>
+    fetch('navbar.php')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading navbar:', error);
+      });
+  </script>
+
+</body>
+</html>
