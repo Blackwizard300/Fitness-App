@@ -1,46 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="login.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VASK FITNESS - Login</title>
+  <link rel="stylesheet" href="login.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Crimson+Text&family=Inter&family=Inconsolata:wght@800&display=swap" rel="stylesheet"/>
 </head>
-<main class="login-container">
-  <h1 class="login-title">Log In</h1>
-  <form class="login-form" action="./login.php" method="post">
-    <div class="form-fields">
-      <div class="input-wrapper">
-        <input
-          type="email"
-          class="form-input" name="email"
-          required
-          aria-label="Email"
-          placeholder=" "
-        />
-        <label class="input-label">
-          <span>Email</span>
-          <span class="required">*</span>
-        </label>
-      </div>
+<body>
+  <main class="login-container">
+    <header class="site-header">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2?placeholderIfAbsent=true" alt="Logo" class="logo"/>
+      <h1 class="brand-name">VASK FITNESS</h1>
+    </header>
 
-      <div class="input-wrapper">
-        <input
-          type="password" name="password"
-          class="form-input"
-          required
-          aria-label="Password"
-          placeholder=" "
-        />
-        <label class="input-label">
-          <span>Password</span>
-          <span class="required">*</span>
-        </label>
-      </div>
-    </div>
+    <section class="login-form-container">
+      <h2 class="login-title">Login</h2>
 
-    <p class="signup-text">
-      <span>New to VASK?</span>
-      <a href="signup.html" class="signup-link">Sign Up</a>
-    </p>
+      <form class="login-form">
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-input" required />
+        </div>
 
-    <button type="submit" class="login-button">Log In</button>
-  </form>
-</main>
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-input" required />
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="login-button">Login</button>
+      </form>
+    </section>
+
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/37b44e685a8b9821adbc5f5629db1e334bed0493?placeholderIfAbsent=true" alt="Background" class="background-image"/>
+  </main>
+</body>
+</html>
