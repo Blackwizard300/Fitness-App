@@ -1,110 +1,63 @@
-<link rel="stylesheet" href="workout.css" />
-<header class="nav-header">
-  <div class="brand">
-    <img
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a2b279d63205da0f1533bc9da9c25df9ebca245?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-      alt="Vask Fitness Logo"
-      class="brand-logo"
-    />
-    <h1 class="brand-name">VASK FITNESS</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VASK FITNESS - Workout Week Selection</title>
+  <link rel="stylesheet" href="workout.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="weekchoose">
+    <header class="navigation-header">
+      <div class="logo-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a2b279d63205da0f1533bc9da9c25df9ebca245?placeholderIfAbsent=true&apiKey=d00569c252494ad98a606b889114629f" class="logo-image" alt="VASK FITNESS Logo" />
+        <h1 class="brand-name">VASK FITNESS</h1>
+      </div>
+      <nav class="main-navigation">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About us</a>
+        <a href="#" class="nav-link">Meal</a>
+        <a href="#" class="nav-link active">Workout</a>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/70dabb4641fdacdc5e401a2306246c2dd71813c0?placeholderIfAbsent=true&apiKey=d00569c252494ad98a606b889114629f" class="profile-icon" alt="Profile" />
+      </nav>
+    </header>
+
+    <main class="workout-content" space="0">
+      <div class="content-container">
+        <section class="days-left-column">
+          <div class="days-content">
+            <h2 class="challenge-title">7 Days workout challenge</h2>
+            <article class="day-card sunday-card">
+              <span class="special-font">Sunday</span>
+            </article>
+            <div class="additional-days">
+              <article class="day-card tuesday-card">
+                <span class="special-font">Tuesday</span>
+              </article>
+              <article class="day-card thursday-card">
+                <span class="special-font">Thursday</span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="days-right-column">
+          <div class="image-container">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3af977cbe7aca33e46e67bb84f0f8a5ce5905415?placeholderIfAbsent=true&apiKey=d00569c252494ad98a606b889114629f" class="background-image" alt="Workout background" />
+            <article class="day-card monday-card">
+              <span class="special-font">Monday</span>
+            </article>
+            <article class="day-card wednesday-card">
+              <span class="special-font">Wednesday</span>
+            </article>
+            <article class="day-card friday-card">
+              <span class="special-font">Friday</span>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
-  <nav class="main-nav">
-    <a href="#" class="nav-link">Home</a>
-    <a href="#" class="nav-link">Meal</a>
-    <a href="#" class="nav-link">About us</a>
-    <a href="#" class="nav-link">Workout</a>
-    <img
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/13ee4f60030d35b5687c38262d8a815b99cc42eb?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-      alt="User Profile"
-      class="profile-icon"
-    />
-  </nav>
-</header>
-
-<main class="page-container">
-  <section class="workout-section">
-    <div class="workout-grid">
-      <article class="workout-card">
-        <h2 class="day-title">Sunday</h2>
-        <h3 class="workout-title">Chest Day</h3>
-        <div class="rating-container">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a97864ba5606148ba86dbbff3ff1b03639b0c94?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-            alt="Rating Star"
-            class="rating-star"
-          />
-          <span class="rating-score">5.0</span>
-        </div>
-      </article>
-
-      <article class="workout-card">
-        <h2 class="day-title">Monday</h2>
-        <h3 class="workout-title">Back Day</h3>
-        <div class="rating-container">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a97864ba5606148ba86dbbff3ff1b03639b0c94?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-            alt="Rating Star"
-            class="rating-star"
-          />
-          <span class="rating-score">5.0</span>
-        </div>
-      </article>
-
-      <article class="workout-card">
-        <h2 class="day-title">Tuesday</h2>
-        <h3 class="workout-title">Biceps and<br />Triceps</h3>
-        <div class="rating-container">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a97864ba5606148ba86dbbff3ff1b03639b0c94?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-            alt="Rating Star"
-            class="rating-star"
-          />
-          <span class="rating-score">5.0</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="workout-section">
-    <div class="workout-grid">
-      <article class="workout-card">
-        <h2 class="day-title">Wednesday</h2>
-        <h3 class="workout-title">Shoulder Day</h3>
-        <div class="rating-container">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/f725711cf0cc792c7a0662bd58e5af112b54c06c?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-            alt="Rating Star"
-            class="rating-star"
-          />
-          <span class="rating-score">5.0</span>
-        </div>
-      </article>
-
-      <article class="workout-card">
-        <h2 class="day-title">Thursday</h2>
-        <h3 class="workout-title">Leg Day</h3>
-        <div class="rating-container">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/f725711cf0cc792c7a0662bd58e5af112b54c06c?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-            alt="Rating Star"
-            class="rating-star"
-          />
-          <span class="rating-score">5.0</span>
-        </div>
-      </article>
-
-      <article class="workout-card">
-        <h2 class="day-title">Friday</h2>
-        <h3 class="workout-title">Cardio, Abs And<br />Forearms</h3>
-        <div class="rating-container">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/f725711cf0cc792c7a0662bd58e5af112b54c06c?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-            alt="Rating Star"
-            class="rating-star"
-          />
-          <span class="rating-score">5.0</span>
-        </div>
-      </article>
-    </div>
-  </section>
-</main>
+</body>
+</html>
