@@ -1,239 +1,404 @@
-/* Font Face Declaration */
-@font-face {
-    font-family: "Jersey 25";
-    src:
-      url("path/to/Jersey25-Regular.woff2") format("woff2"),
-      url("path/to/Jersey25-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inika", serif;
+  background-color: #000;
+}
+
+/* Main container */
+.weekchoose {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: stretch;
+  min-height: 100vh;
+  border: none;
+  outline: none;
+}
+
+/* Navigation header */
+.navigation-header {
+  width: 100%;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: rgba(0, 0, 0, 0.52);
+  z-index: 10;
+}
+
+@media (max-width: 991px) {
+  .navigation-header {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  
-  /* Base Styles */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Logo section */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Navigation menu */
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+@media (max-width: 991px) {
+  .main-navigation {
+    max-width: 100%;
   }
-  
-  /* Page Container */
-  .page-container {
-    background-color: rgba(17, 21, 23, 1);
-    display: flex;
-    padding-bottom: 60px;
+}
+
+@media (max-width: 640px) {
+  .main-navigation {
+    display: none;
+  }
+}
+
+.nav-link {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #DF583A;
+}
+
+.nav-link.active {
+  color: #DF583A;
+  font-weight: 700;
+}
+
+/* Add underline on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #DF583A;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.profile-icon {
+  aspect-ratio: 1.09;
+  object-fit: contain;
+  object-position: center;
+  width: 35px;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-shrink: 0;
+}
+
+/* Main content area */
+.workout-content {
+  align-self: center;
+  margin-top: -88px;
+  width: 100%;
+  max-width: 1406px;
+}
+
+@media (max-width: 991px) {
+  .workout-content {
+    max-width: 100%;
+  }
+}
+
+.content-container {
+  gap: 20px;
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .content-container {
     flex-direction: column;
-    overflow: hidden;
-    align-items: center;
-  }
-  
-  /* Navigation Header */
-  .nav-header {
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.52);
-    align-self: stretch;
-    display: flex;
-    width: 100%;
-    padding: 8px 30px;
-    align-items: start;
-    gap: 20px;
-    font-family:
-      "Inknut Antiqua",
-      -apple-system,
-      Roboto,
-      Helvetica,
-      sans-serif;
-    color: rgba(255, 255, 255, 1);
-    font-weight: 700;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-sizing: border-box;
-  }
-  
-  .brand {
-    display: flex;
     align-items: stretch;
-    gap: 11px;
+    gap: 0px;
   }
-  
-  .brand-logo {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 72px;
-    align-self: start;
-  }
-  
-  .brand-name {
-    font-size: 32px;
-    margin: 0;
-  }
-  
-  .main-nav {
-    display: flex;
-    margin-top: 5px;
-    align-items: start;
-    gap: 49px;
-    font-size: 24px;
-  }
-  
-  .nav-link {
-    color: white;
-    text-decoration: none;
-    transition:
-      color 0.3s ease,
-      transform 0.2s ease;
-  }
-  
-  .nav-link:hover {
-    color: rgba(217, 217, 217, 1);
-    transform: translateY(-2px);
-  }
-  
-  .nav-link:active {
-    transform: translateY(0);
-  }
-  
-  .profile-icon {
-    aspect-ratio: 0.73;
-    object-fit: contain;
-    object-position: center;
-    width: 54px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  .profile-icon:hover {
-    transform: scale(1.1);
-  }
-  
-  .profile-icon:active {
-    transform: scale(0.95);
-  }
-  
-  /* Workout Sections */
-  .workout-section {
-    margin-top: 94px;
+}
+
+/* Left column with days */
+.days-left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 59%;
+  margin-left: 0px;
+}
+
+@media (max-width: 991px) {
+  .days-left-column {
     width: 100%;
-    max-width: 1178px;
   }
-  
-  .workout-grid {
-    gap: 20px;
-    display: flex;
+}
+
+.days-content {
+  z-index: 10;
+  display: flex;
+  margin-top: auto;
+  margin-right: -285px;
+  margin-bottom: auto;
+  flex-direction: column;
+  align-self: stretch;
+  align-items: start;
+  font-family: 'Holtwood One SC', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 64px;
+  color: #fff;
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .days-content {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 40px;
   }
-  
-  /* Workout Cards */
-  .workout-card {
-    border-radius: 20px;
-    background-color: rgba(217, 217, 217, 1);
-    display: flex;
+}
+
+.challenge-title {
+  color: #DF583A;
+  font-size: 48px;
+  align-self: end;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .challenge-title {
+    max-width: 100%;
+  }
+}
+
+/* Day cards */
+.day-card {
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128, 0.3);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.day-card:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.day-card::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: #DF583A;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+  border-radius: 2px;
+}
+
+.day-card:hover::after {
+  width: 100%;
+}
+
+.sunday-card {
+  margin-top: 59px;
+  width: 684px;
+  max-width: 100%;
+  padding: 54px 70px 54px 88px;
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+@media (max-width: 991px) {
+  .sunday-card {
+    font-size: 40px;
+    padding: 54px 20px;
+    margin-top: 40px;
+  }
+}
+
+.additional-days {
+  margin-top: 49px;
+  width: 684px;
+  max-width: 100%;
+}
+
+@media (max-width: 991px) {
+  .additional-days {
+    margin-top: 40px;
+    font-size: 40px;
+  }
+}
+
+.tuesday-card {
+  padding: 54px 70px 54px 88px;
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+@media (max-width: 991px) {
+  .tuesday-card {
+    font-size: 40px;
+    max-width: 100%;
+    padding: 54px 20px;
+  }
+}
+
+.thursday-card {
+  margin-top: 60px;
+  padding: 54px 70px 54px 88px;
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+@media (max-width: 991px) {
+  .thursday-card {
+    max-width: 100%;
+    font-size: 40px;
+    padding: 54px 20px;
+    margin-top: 40px;
+  }
+}
+
+/* Right column with image background */
+.days-right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 41%;
+  margin-left: 20px;
+}
+
+@media (max-width: 991px) {
+  .days-right-column {
     width: 100%;
-    padding: 19px 26px 98px;
-    flex-direction: column;
-    align-items: start;
-    font-family:
-      "Jersey 25",
-      -apple-system,
-      Roboto,
-      Helvetica,
-      sans-serif;
-    color: rgba(0, 0, 0, 1);
-    font-weight: 400;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
   }
-  
-  /* Ensure proper font loading */
-  .day-title,
-  .workout-title,
-  .rating-score {
-    font-family:
-      "Jersey 25",
-      -apple-system,
-      Roboto,
-      Helvetica,
-      sans-serif;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+  position: relative;
+  min-height: 1024px;
+  flex-grow: 1;
+  padding: 221px 0 83px 12px;
+  font-family: 'Crimson Pro', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .image-container {
+    max-width: 100%;
+    padding-top: 100px;
   }
-  .workout-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.background-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.monday-card {
+  position: relative;
+  padding: 54px 70px 54px 88px;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+@media (max-width: 991px) {
+  .monday-card {
+    max-width: 100%;
+    padding: 54px 20px;
   }
-  
-  .workout-card:active {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wednesday-card {
+  position: relative;
+  margin-top: 49px;
+  padding: 31px 70px 65px 70px;
+  font-family: 'Blaka Hollow', -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+@media (max-width: 991px) {
+  .wednesday-card {
+    max-width: 100%;
+    padding: 31px 20px 65px 20px;
+    margin-top: 40px;
   }
-  .day-title {
-    font-size: 40px;
-    margin: 0;
+}
+
+.friday-card {
+  position: relative;
+  margin-top: 60px;
+  padding: 48px 70px 48px 88px;
+}
+
+@media (max-width: 991px) {
+  .friday-card {
+    max-width: 100%;
+    padding: 48px 20px;
+    margin-top: 40px;
   }
-  
-  .workout-title {
-    font-size: 40px;
-    margin: 59px 0 0;
-    font-weight: 400;
-  }
-  
-  .rating-container {
-    display: flex;
-    margin-top: 56px;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .rating-star {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 50px;
-  }
-  
-  .rating-score {
-    font-size: 48px;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 991px) {
-    .nav-header {
-      max-width: 100%;
-      padding: 8px 20px;
-    }
-  
-    .main-nav {
-      max-width: 100%;
-    }
-  
-    .workout-section {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-  
-    .workout-grid {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 40px;
-    }
-  
-    .workout-card {
-      margin-top: 0;
-      padding: 19px 20px 81px;
-    }
-  
-    .workout-title {
-      margin-top: 40px;
-    }
-  
-    .rating-container {
-      margin-top: 40px;
-    }
-  
-    .rating-score {
-      font-size: 40px;
-    }
-  }
-  
+}
+
+.special-font {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #fff;
+}
+
+/* Apply special font to all day cards for consistency */
+.sunday-card,
+.tuesday-card,
+.thursday-card {
+  font-size: 64px;
+}

@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.page-container {
+  background-color: rgba(17, 21, 23, 1);
+  width: 100%;
+  padding-right: 35px;
+  padding-bottom: 203px;
+  overflow: hidden;
+}
+
+.navigation-bar {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.52);
+  display: flex;
+  width: 100%;
+  padding-left: 80px;
+  padding-top: 8px;
+  align-items: stretch;
+  gap: 20px;
+  font-family:
+    "Inknut Antiqua",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-weight: 700;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 32px;
+}
+
+.nav-menu {
+  z-index: 10;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: stretch;
+  gap: 40px 61px;
+  font-size: 24px;
+}
+
+.nav-item {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  flex-grow: 1;
+}
+
+.menu-icon {
+  aspect-ratio: 1.02;
+  object-fit: contain;
+  object-position: center;
+  width: 56px;
+  align-self: start;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.profile-section {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 103px;
+  margin-bottom: -41px;
+  width: 819px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family:
+    "Jersey 25",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-weight: 400;
+}
+
+.profile-title {
+  font-size: 64px;
+  margin-left: 52px;
+}
+
+.profile-image {
+  aspect-ratio: 1.08;
+  object-fit: contain;
+  object-position: center;
+  width: 317px;
+  margin-top: 27px;
+  max-width: 100%;
+}
+
+.profile-details {
+  align-self: flex-end;
+  display: flex;
+  margin-top: 45px;
+  width: 767px;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 40px 100px;
+  font-size: 40px;
+  flex-wrap: wrap;
+}
+
+.details-column {
+  display: flex;
+  margin-top: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.details-column:first-child .detail-item:nth-child(2) {
+  margin-top: 32px;
+}
+
+.details-column:first-child .detail-item:nth-child(3) {
+  align-self: stretch;
+  margin-top: 47px;
+}
+
+.details-column:first-child .detail-item:nth-child(4) {
+  margin-top: 27px;
+}
+
+.details-column:last-child .detail-item:nth-child(2) {
+  margin-top: 40px;
+}
+
+.details-column:last-child .detail-item:nth-child(3) {
+  align-self: stretch;
+  margin-top: 40px;
+}
+
+@media (max-width: 991px) {
+  .page-container {
+    max-width: 100%;
+    padding-right: 20px;
+    padding-bottom: 100px;
+  }
+
+  .navigation-bar {
+    max-width: 100%;
+    padding-left: 20px;
+  }
+
+  .nav-menu {
+    max-width: 100%;
+    margin-right: -18px;
+  }
+
+  .profile-section {
+    margin-bottom: 10px;
+  }
+
+  .profile-title {
+    margin-left: 10px;
+    font-size: 40px;
+  }
+
+  .profile-details {
+    margin-top: 40px;
+  }
+
+  .details-column:first-child .detail-item:nth-child(3) {
+    margin-top: 40px;
+  }
+}

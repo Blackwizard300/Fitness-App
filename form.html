@@ -1,80 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="form.css" />
-    <script src="form.js" defer></script>
-  </head>
-  <div class="profile-form">
-    <h1 class="form-title">Choose your gender</h1>
-    <div class="gender-options">
-      <button class="gender-option male">
-        <div class="gender-icon">
-          <svg
-            width="55"
-            height="55"
-            viewBox="0 0 55 55"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon-male"
-          >
-            <path
-              d="M3.4375 10.3125C3.4375 8.48914 4.16183 6.74045 5.45114 5.45114C6.74045 4.16183 8.48914 3.4375 10.3125 3.4375H44.6875C46.5109 3.4375 48.2595 4.16183 49.5489 5.45114C50.8382 6.74045 51.5625 8.48914 51.5625 10.3125V44.6875C51.5625 46.5109 50.8382 48.2595 49.5489 49.5489C48.2595 50.8382 46.5109 51.5625 44.6875 51.5625H10.3125C8.48914 51.5625 6.74045 50.8382 5.45114 49.5489C4.16183 48.2595 3.4375 46.5109 3.4375 44.6875V10.3125Z"
-              fill="#00A6ED"
-            />
-            <path
-              d="M35.7173 10.3125C35.2615 10.3125 34.8243 10.4936 34.502 10.8159C34.1797 11.1382 33.9986 11.5754 33.9986 12.0312C33.9986 12.4871 34.1797 12.9243 34.502 13.2466C34.8243 13.5689 35.2615 13.75 35.7173 13.75H39.0053L32.8694 19.9616C30.1125 17.809 26.6389 16.788 23.1557 17.1064C19.6726 17.4248 16.4416 19.0586 14.1207 21.6753C11.7998 24.292 10.5633 27.6948 10.6629 31.1911C10.7626 34.6874 12.1909 38.0143 14.6572 40.4945C17.1234 42.9747 20.4421 44.4218 23.9378 44.5413C27.4334 44.6607 30.8432 43.4435 33.473 41.1374C36.1028 38.8313 37.7549 35.6097 38.093 32.1284C38.4311 28.6471 37.4297 25.1678 35.2928 22.3987L41.25 16.3659V19.415C41.25 19.8708 41.4311 20.308 41.7534 20.6303C42.0757 20.9527 42.5129 21.1337 42.9687 21.1337C43.4246 21.1337 43.8618 20.9527 44.1841 20.6303C44.5064 20.308 44.6875 19.8708 44.6875 19.415V12.0312C44.6875 11.5754 44.5064 11.1382 44.1841 10.8159C43.8618 10.4936 43.4246 10.3125 42.9687 10.3125H35.7173ZM24.4114 20.4909C27.1464 20.4909 29.7695 21.5774 31.7034 23.5114C33.6374 25.4454 34.7239 28.0684 34.7239 30.8034C34.7239 33.5385 33.6374 36.1615 31.7034 38.0955C29.7695 40.0294 27.1464 41.1159 24.4114 41.1159C21.6764 41.1159 19.0533 40.0294 17.1194 38.0955C15.1854 36.1615 14.0989 33.5385 14.0989 30.8034C14.0989 28.0684 15.1854 25.4454 17.1194 23.5114C19.0533 21.5774 21.6764 20.4909 24.4114 20.4909Z"
-              fill="white"
-            />
-          </svg>
-        </div>
-        <span class="gender-label">Male</span>
-      </button>
-      <button class="gender-option female">
-        <div class="gender-icon">
-          <svg
-            width="47"
-            height="55"
-            viewBox="0 0 47 55"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon-female"
-          >
-            <path
-              d="M-2 6.875C-2 5.05164 -1.27567 3.30295 0.0136409 2.01364C1.30295 0.724328 3.05164 0 4.875 0H39.25C41.0734 0 42.822 0.724328 44.1114 2.01364C45.4007 3.30295 46.125 5.05164 46.125 6.875V41.25C46.125 43.0734 45.4007 44.822 44.1114 46.1114C42.822 47.4007 41.0734 48.125 39.25 48.125H4.875C3.05164 48.125 1.30295 47.4007 0.0136409 46.1114C-1.27567 44.822 -2 43.0734 -2 41.25V6.875Z"
-              fill="#F70A8D"
-            />
-            <path
-              d="M8.87964 18.3391C8.87979 15.8052 9.61023 13.325 10.9835 11.1955C12.3568 9.06594 14.3147 7.3773 16.6228 6.33173C18.931 5.28615 21.4915 4.92794 23.998 5.29998C26.5045 5.67202 28.8506 6.75854 30.7555 8.42948C32.6605 10.1004 34.0435 12.2849 34.739 14.7215C35.4345 17.1582 35.413 19.7436 34.6771 22.1683C33.9413 24.593 32.5222 26.7543 30.5898 28.3934C28.6573 30.0324 26.2935 31.0798 23.7812 31.4102V33.8594H27.7859C28.2417 33.8594 28.6789 34.0405 29.0012 34.3628C29.3236 34.6852 29.5046 35.1223 29.5046 35.5782C29.5046 36.034 29.3236 36.4712 29.0012 36.7935C28.6789 37.1159 28.2417 37.2969 27.7859 37.2969H23.7812V41.2501C23.7812 41.7059 23.6001 42.1431 23.2778 42.4654C22.9555 42.7877 22.5183 42.9688 22.0625 42.9688C21.6066 42.9688 21.1694 42.7877 20.8471 42.4654C20.5248 42.1431 20.3437 41.7059 20.3437 41.2501V37.2969H16.339C15.8832 37.2969 15.446 37.1159 15.1237 36.7935C14.8013 36.4712 14.6203 36.034 14.6203 35.5782C14.6203 35.1223 14.8013 34.6852 15.1237 34.3628C15.446 34.0405 15.8832 33.8594 16.339 33.8594H20.3437V31.4102C17.1723 30.9932 14.2607 29.4372 12.1515 27.0324C10.0423 24.6276 8.87944 21.5379 8.87964 18.3391ZM22.0625 8.59381C20.7827 8.59381 19.5154 8.84588 18.3331 9.33563C17.1507 9.82537 16.0764 10.5432 15.1715 11.4481C14.2665 12.3531 13.5487 13.4274 13.059 14.6097C12.5692 15.7921 12.3171 17.0593 12.3171 18.3391C12.3171 19.6189 12.5692 20.8861 13.059 22.0685C13.5487 23.2508 14.2665 24.3252 15.1715 25.2301C16.0764 26.135 17.1507 26.8529 18.3331 27.3426C19.5154 27.8324 20.7827 28.0844 22.0625 28.0844C24.6471 28.0844 27.1258 27.0577 28.9534 25.2301C30.781 23.4025 31.8078 20.9237 31.8078 18.3391C31.8078 15.7545 30.781 13.2757 28.9534 11.4481C27.1258 9.62054 24.6471 8.59381 22.0625 8.59381Z"
-              fill="white"
-            />
-          </svg>
-        </div>
-        <span class="gender-label">Female</span>
-      </button>
-    </div>
-  
-    <h2 class="form-title">Select your age</h2>
-    <div class="age-selector">
-      <span class="age-value">19</span>
-      <div class="age-controls">
-        <button class="age-control increase" aria-label="Increase age">
-          <span class="arrow up"></span>
-        </button>
-        <button class="age-control decrease" aria-label="Decrease age">
-          <span class="arrow down"></span>
-        </button>
-      </div>
-    </div>
-  
-    <h2 class="form-title">Select you weight</h2>
-    <div class="weight-selector">
-      <div class="weight-slider">
-        <div class="slider-track"></div>
-        <div class="slider-progress"></div>
-        <div class="slider-handle"></div>
-      </div>
-      <span class="weight-value">64</span>
-    </div>
-  
-    <button class="continue-button">Continue</button>
-  </div>
-  <script src="script.js"></script>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gender Age Weight Component</title>
+  <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+  <section class="genderageweight">
+    <!-- The builder photo is used as a background image -->
+    <div class="background-img"></div>
+
+    <!-- The centered form -->
+    <form class="form-box" onsubmit="return validateForm()">
+      <label>Gender</label>
+      <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <label>Age</label>
+      <input type="number" id="age" required />
+
+      <label>Weight (kg)</label>
+      <input type="number" id="weight" required />
+
+      <button type="submit" class="submit-button">Continue</button>
+    </form>
+  </section>
+
+  <script>
+    function validateForm() {
+      const gender = document.getElementById("gender").value;
+      const age = document.getElementById("age").value;
+      const weight = document.getElementById("weight").value;
+
+      if (!gender || !age || !weight) {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      alert("Submitted successfully!");
+      return true;
+    }
+  </script>
+</body>
+</html>
