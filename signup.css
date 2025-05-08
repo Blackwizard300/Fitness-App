@@ -1,31 +1,27 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
+body, html {
   font-family: "Crimson Text", serif;
   background-color: #000;
-  color: #fff;
-}
-
-/* Header with only logo and name */
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 10px 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: 100vh;
   width: 100%;
-  background-color: #000;
-  z-index: 1000;
-  /* border-bottom removed */
+  overflow: hidden;
+  position: relative;
 }
 
+/* BRAND HEADER */
 .brand-header {
+  position: absolute;
+  top: 22px;
+  left: 28px;
   display: flex;
   align-items: center;
+  z-index: 100;
 }
 
 .brand-logo {
@@ -39,83 +35,75 @@ body {
   font-size: 24px;
   font-weight: bold;
   color: white;
-  text-decoration: none;
 }
 
-/* Hide nav links completely */
-.nav-links {
-  display: none;
-}
-
-/* Signup section layout */
+/* MAIN CONTAINER */
 .signup-container {
-  display: flex;
   width: 100%;
-  min-height: 100vh;
-  padding-top: 70px; /* smaller padding to avoid scroll hiding issue */
-  align-items: center; /* vertically center */
-  justify-content: center; /* horizontally center */
-}
-
-.signup-left {
-  flex: 1;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+  position: relative;
 }
 
+/* FORM CENTERING */
+.signup-form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 350px;
+  width: 90%;
+  text-align: center;
+  z-index: 10;
+}
+
+/* FORM STYLES */
 .signup-heading {
   font-family: "Crimson Text", serif;
-  font-size: 48px;
+  font-size: 45px;
   color: #df583a;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 .signup-form {
   width: 100%;
-  max-width: 400px;
 }
 
 .form-group {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .form-label {
-  font-family: "Crimson Text", serif;
-  font-size: 18px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 6px;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .form-input {
-  height: 50px;
-  border-radius: 10px;
+  width: 100%;
+  height: 45px;
+  border-radius: 12px;
   background-color: #d9d9d9;
   border: none;
-  padding: 0 15px;
-  font-size: 16px;
+  padding: 0 12px;
+  font-size: 15px;
   color: #000;
 }
 
+/* BUTTON STYLES */
 .button-container {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
+  margin-top: 20px;
 }
 
 .continue-button {
-  width: 100%;
-  max-width: 200px;
-  height: 50px;
-  border-radius: 30px;
+  width: 180px;
+  height: 45px;
+  border-radius: 50px;
   background-color: #d9d9d9;
   font-family: "Inconsolata", monospace;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: #000;
   border: none;
@@ -128,10 +116,12 @@ body {
   color: white;
 }
 
+/* LOGIN PROMPT */
 .login-prompt {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 16px;
+  margin-top: 15px;
+  font-size: 14px;
+  color: white; /* Add this so the text stays visible */
+  text-align: center; /* Center the whole sentence */
 }
 
 .login-link {
@@ -139,33 +129,18 @@ body {
   text-decoration: none;
 }
 
-/* Right side image */
+/* BACKGROUND IMAGE */
 .signup-right {
   flex: 1;
-  position: relative;
-  display: block;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   overflow: hidden;
 }
 
 .background-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center right;
-  opacity: 1;
-}
-
-/* Responsive adjustments */
-@media (max-width: 991px) {
-  .signup-container {
-    flex-direction: column;
-  }
-
-  .signup-right {
-    display: none;
-  }
-
-  .signup-heading {
-    font-size: 36px;
-  }
 }
