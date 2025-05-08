@@ -1,4 +1,4 @@
-/* Base styles */
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,176 +7,159 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #000;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Login container */
+/* Main container */
 .login-container {
-  max-width: none;
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
   width: 100%;
-  height: 100vh;
-  background-color: #000;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Header and logo */
+/* Header (logo and brand name) */
 .site-header {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 11px 20px;
+  top: 10px;
+  left: 20px;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
 }
 
 .brand-name {
   margin-left: 10px;
   color: #fff;
   font-family: "Inknut Antiqua", serif;
-  font-size: 28px; /* Reduced */
+  font-size: 26px;
   font-weight: 700;
 }
 
-/* Login form container */
+/* Form container */
 .login-form-container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .login-title {
   color: #df583a;
   font-family: "Crimson Text", serif;
-  font-size: 52px; /* Reduced */
-  font-weight: 400;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 40px;
+  font-size: 48px;
+  margin-bottom: 30px;
 }
 
-/* Form elements */
 .login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Each form group (email/password) */
 .form-group {
   margin-bottom: 20px;
   width: 100%;
+  max-width: 560px;   /* Made wider horizontally */
 }
 
-.form-label {
-  display: block;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  font-size: 18px; /* Reduced */
+/* Label row for password group */
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 5px;
 }
 
-.form-input {
-  width: 487px;
-  height: 59px;
-  border-radius: 20px;
-  border: none;
-  padding: 10px;
-  font-size: 18px; /* Reduced */
-  background-color: #d9d9d9;
+/* Labels */
+.form-label {
+  color: #fff;
+  font-size: 16px;
 }
 
+/* Forgot password link */
 .forgot-password {
-  display: block;
   color: #4f7df2;
-  font-family: "Inter", sans-serif;
-  font-size: 18px; /* Reduced */
-  margin-top: 5px;
-  cursor: pointer;
+  font-size: 14px;
   text-decoration: none;
 }
 
-.login-button {
-  width: 149px;
-  height: 70px;
-  border-radius: 50px;
-  color: #000;
-  font-family: "Inconsolata", monospace;
-  font-size: 28px; /* Reduced */
-  font-weight: 800;
+/* Input styling */
+.form-input {
+  width: 100%;
+  height: 48px;  /* Height unchanged */
+  border-radius: 20px;
   border: none;
-  cursor: pointer;
-  margin-top: 30px;
+  padding: 10px;
+  font-size: 16px;
   background-color: #d9d9d9;
 }
 
-/* Background image */
+/* Login button */
+.login-button {
+  width: 140px;
+  height: 55px;
+  border-radius: 50px;
+  background-color: #d9d9d9;
+  font-family: "Inconsolata", monospace;
+  font-size: 22px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;  /* Reduced space as per your previous instruction */
+}
+
+/* Background image (bodybuilder) */
 .background-image {
   position: absolute;
   right: 0;
   top: 0;
-  width: 696px;
+  bottom: 0;
+  max-width: 700px;
   height: 100%;
-  opacity: 0.8; /* Increased brightness */
-  filter: brightness(1.2) contrast(1.1); /* Enhances quality and clarity */
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+  object-fit: contain;
+  opacity: 0.95;
+  z-index: 1;
 }
 
-/* Media queries */
+/* Responsive adjustments */
 @media (max-width: 991px) {
-  .login-container {
-    max-width: 991px;
-  }
-
   .form-input {
-    width: 400px;
-  }
-
-  .login-button {
-    width: 130px;
-    height: 60px;
-    font-size: 24px;
-  }
-
-  .login-title {
-    font-size: 42px;
-  }
-}
-
-@media (max-width: 640px) {
-  .login-container {
-    max-width: 640px;
-  }
-
-  .brand-name {
-    font-size: 22px;
+    width: 90%;
+    max-width: 400px;
   }
 
   .login-title {
     font-size: 36px;
   }
+}
 
+@media (max-width: 640px) {
   .form-input {
-    width: 280px;
+    width: 90%;
+    max-width: 280px;
   }
 
   .login-button {
-    width: 110px;
+    width: 120px;
     height: 50px;
     font-size: 20px;
   }
 
   .background-image {
-    display: none;
+    display: none; /* Hide image on small screens */
   }
 }
