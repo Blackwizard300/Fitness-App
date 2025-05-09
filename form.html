@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gender Age Weight Component</title>
-  <link rel="stylesheet" href="form.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vask Fitness Form</title>
+  <link rel="stylesheet" href="form.css">
 </head>
 <body>
-  <section class="genderageweight">
-    <!-- The builder photo is used as a background image -->
-    <div class="background-img"></div>
+  <main class="fitness-form">
+    <div class="content-wrapper">
+      <section class="form-section">
+        <div class="form-container">
+          <header class="brand-header">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a2b279d63205da0f1533bc9da9c25df9ebca245?placeholderIfAbsent=true&apiKey=05c28a622c844802881811be150d7692" alt="Vask Fitness Logo" class="brand-logo" />
+            <h1 class="brand-name">VASK FITNESS</h1>
+          </header>
 
-    <!-- The centered form -->
-    <form class="form-box" onsubmit="return validateForm()">
-      <label>Gender</label>
-      <select id="gender" required>
-        <option value="">Select Gender</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-      </select>
+          <form class="user-details-form">
+            <div class="form-group">
+              <label class="form-label">Gender</label>
+              <select class="input-field" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
 
-      <label>Age</label>
-      <input type="number" id="age" required />
+            <div class="form-group">
+              <label class="form-label">Age</label>
+              <div class="age-input">
+                <button type="button" class="adjust-btn" id="age-down">-</button>
+                <input type="number" class="input-field" id="age" value="25" readonly />
+                <button type="button" class="adjust-btn" id="age-up">+</button>
+              </div>
+            </div>
 
-      <label>Weight (kg)</label>
-      <input type="number" id="weight" required />
+            <div class="form-group">
+              <label class="form-label">Weight</label>
+              <input type="text" class="input-field" id="weight" />
+            </div>
 
-      <button type="submit" class="submit-button">Continue</button>
-    </form>
-  </section>
+            <div class="form-group">
+              <label class="form-label">Height</label>
+              <input type="text" class="input-field" id="height" />
+            </div>
 
-  <script>
-    function validateForm() {
-      const gender = document.getElementById("gender").value;
-      const age = document.getElementById("age").value;
-      const weight = document.getElementById("weight").value;
+            <button type="button" class="continue-btn">Continue</button>
+          </form>
+        </div>
+      </section>
 
-      if (!gender || !age || !weight) {
-        alert("Please fill in all fields.");
-        return false;
-      }
+      <section class="image-section">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4bf15dc25e3a622081c506f17a48010e45eb0757?placeholderIfAbsent=true&apiKey=05c28a622c844802881811be150d7692" alt="Fitness Motivation" class="feature-image" />
+      </section>
+    </div>
+  </main>
 
-      alert("Submitted successfully!");
-      return true;
-    }
-  </script>
+  <script src="form.js"></script>
 </body>
 </html>

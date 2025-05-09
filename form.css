@@ -1,86 +1,212 @@
-body {
+/* RESET */
+* {
   margin: 0;
   padding: 0;
-  background-color: #000;
-  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: "Crimson Text", serif;
+  background-color: #000000;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   overflow: hidden;
-}
-
-/* The background image covering the entire screen */
-.background-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://cdn.builder.io/api/v1/image/assets/TEMP/69c9c767b213c108552eb90fa7f4f91d45e7a079?placeholderIfAbsent=true&apiKey=d00569c252494ad98a606b889114629f');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.4; /* Dimming the image to keep the form readable */
-  z-index: -1; /* Keeping the form in front */
-}
-
-.genderageweight {
   position: relative;
+}
+
+/* BRAND HEADER */
+.brand-header {
+  position: absolute;
+  top: 22px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inknut Antiqua', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.brand-name {
+  font-size: 20px;
+}
+
+/* MAIN CONTAINER */
+.fitness-form {
+  display: flex;
+  background-color: #000000;
+  padding-left: 50px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper {
+  gap: 20px;
+  display: flex;
+}
+
+.form-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 50%;
+  align-items: stretch;
   justify-content: center;
+  margin-left: auto; /* Center the form horizontally */
+  margin-right: auto; /* Ensure it is not pushed to the left */
+}
+
+.form-container {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+
+.user-details-form {
+  display: flex;
+  margin-top: 50px;
+  width: 350px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-label {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 500;
+}
+
+/* Gender Dropdown */
+.input-field {
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
+  display: flex;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 0 12px;
+  font-size: 16px;
+  color: #000;
+}
+
+/* Age Input Section */
+.age-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.adjust-btn {
+  background-color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.adjust-btn:hover {
+  background-color: #ff784e;
+}
+
+/* Continue Button */
+.continue-btn {
+  border-radius: 50px;
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
+  align-self: center;
+  margin-top: 40px;
+  width: 200px;
+  padding: 15px 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: #000;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continue-btn:hover {
+  background-color: #ff784e;
+  color: white;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.feature-image {
   width: 100%;
   height: 100%;
-  z-index: 1;
+  object-fit: cover;
+  object-position: center right;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-/* Form box styles */
-.form-box {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9); /* Adding transparency to the form background */
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
+@media (max-width: 991px) {
+  .fitness-form {
+    padding-left: 20px;
+  }
 
-.form-box label {
-  color: #333;
-  font-size: 18px;
-}
+  .content-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-.form-box input,
-.form-box select {
-  height: 45px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  padding: 10px;
-  background-color: #f2f2f2;
-}
+  .form-section {
+    width: 100%;
+  }
 
-.submit-button {
-  width: 140px;
-  height: 50px;
-  border-radius: 25px;
-  background-color: #df583a;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
+  .user-details-form {
+    margin-top: 40px;
+    font-size: 16px;
+  }
 
-.submit-button:hover {
-  background-color: #e8684a;
-}
+  .continue-btn {
+    padding: 15px;
+    margin-top: 30px;
+  }
 
-.submit-button:active {
-  transform: scale(0.95);
+  .form-value {
+    margin-top: 40px;
+  }
+
+  .image-section {
+    width: 100%;
+  }
+
+  .feature-image {
+    max-width: 100%;
+    height: auto;
+  }
 }

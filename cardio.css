@@ -1,173 +1,163 @@
-@font-face {
-    font-family: "Inknut Antiqua";
-    src: url("path-to-font/InknutAntiqua-Bold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Holtwood+One+SC&family=Crimson+Pro&display=swap');
+
+.workout-page {
+  background-color: #000;
+  overflow: hidden;
+  color: rgb(223, 88, 58);
+  font-weight: 400;
+  min-height: 1024px;
+  width: 100%;
+  padding-bottom: 79px;
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.navigation-bar {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-content {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.52);
+  display: flex;
+  width: 100%;
+  padding: 8px 37px;
+  align-items: flex-start;
+  gap: 20px;
+  font-family: 'Inknut Antiqua', -apple-system, Roboto, Helvetica, sans-serif;
+  color: #fff;
+  font-weight: 700;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.brand-container {
+  display: flex;
+  align-items: stretch;
+  gap: 11px;
+  font-size: 32px;
+}
+
+.brand-logo {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 72px;
+  align-self: start;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  flex-grow: 1;
+  margin: 0;
+  font-size: inherit;
+}
+
+.nav-links {
+  display: flex;
+  margin: auto 0;
+  align-items: stretch;
+  gap: 64px;
+  font-size: 24px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: rgb(223, 88, 58);
+}
+
+.user-icon {
+  aspect-ratio: 1.09;
+  object-fit: contain;
+  object-position: center;
+  width: 35px;
+  margin: auto 0;
+}
+
+.page-title {
+  position: relative;
+  font-size: 64px;
+  font-family: 'Holtwood One SC', -apple-system, Roboto, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 58px;
+}
+
+.workout-content {
+  position: relative;
+  margin-left: 26px;
+  width: 687px;
+  max-width: 100%;
+  font-family: 'Crimson Pro', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 48px;
+}
+
+.section-title {
+  font-size: 48px;
+  color: rgb(223, 88, 58);
+  margin: 36px 0 16px;
+}
+
+.workout-list {
+  list-style: none;
+  padding: 0;
+  color: #fff;
+  font-size: 40px;
+  margin: 9px 0;
+}
+
+.workout-list li {
+  margin-bottom: 8px;
+}
+
+.workout-list li::before {
+  content: "•";
+  color: rgb(223, 88, 58);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+@media (max-width: 991px) {
+  .nav-content {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  
-  @font-face {
-    font-family: "Jersey 25";
-    src: url("path-to-font/Jersey25.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
+
+  .nav-links {
+    max-width: 100%;
   }
-  
-  :root {
-    --color-background: #111517;
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-gray: #d9d9d9;
-    --color-profile-bg: #f5ebeb;
-  }
-  
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background-color: var(--color-background);
-  }
-  
-  /* Header Styles */
-  .header {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.52);
-    padding: 10px 0;
-  }
-  
-  .header-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 26px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-  }
-  
-  .brand-logo {
-    width: 72px;
-    height: 72px;
-  }
-  
-  .brand-name {
-    color: var(--color-white);
-    font-family: "Inknut Antiqua", serif;
-    font-size: 32px;
-    font-weight: 700;
-    margin: 0;
-  }
-  
-  /* Navigation Styles */
-  .main-nav {
-    display: flex;
-    align-items: center;
-    gap: 64px;
-  }
-  
-  .nav-link {
-    color: var(--color-white);
-    font-family: "Inknut Antiqua", serif;
-    font-size: 24px;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  
-  .nav-link-active {
-    color: var(--color-black);
-    background-color: var(--color-gray);
-    border-radius: 20px;
-    padding: 8px 16px;
-  }
-  
-  .profile-icon {
-    width: 54px;
-    height: 54px;
-    background-color: var(--color-profile-bg);
-  }
-  
-  /* Main Content Styles */
-  .main-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 40px 82px;
-  }
-  
-  .workout-container {
-    display: flex;
-    gap: 142px;
-  }
-  
-  .workout-details {
-    flex: 1;
-    background-color: var(--color-gray);
-    padding: 40px;
-  }
-  
-  .workout-title {
-    color: var(--color-black);
-    font-family: "Jersey 25", sans-serif;
-    font-size: 64px;
-    margin: 0 0 49px 0;
-  }
-  
-  .exercise-list {
-    display: flex;
-    flex-direction: column;
-    gap: 31px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .exercise-item {
-    color: var(--color-black);
-    font-family: "Jersey 25", sans-serif;
+
+  .page-title {
+    max-width: 100%;
+    margin-top: 40px;
     font-size: 40px;
   }
-  
-  .workout-image {
-    width: 458px;
-    height: 787px;
-    object-fit: cover;
+
+  .workout-content {
+    font-size: 40px;
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 991px) {
-    .main-nav {
-      display: none;
-    }
-  
-    .workout-container {
-      flex-direction: column;
-      padding: 0 40px;
-      gap: 40px;
-    }
-  
-    .workout-image {
-      width: 100%;
-    }
+
+  .section-title {
+    margin-left: 7px;
+    font-size: 40px;
   }
-  
-  @media (max-width: 640px) {
-    .main-content {
-      padding: 40px 20px;
-    }
-  
-    .workout-details {
-      padding: 20px;
-    }
-  
-    .workout-title {
-      font-size: 48px;
-      margin-bottom: 30px;
-    }
-  
-    .exercise-item {
-      font-size: 32px;
-    }
+
+  .workout-list {
+    max-width: 100%;
   }
-  
+}
