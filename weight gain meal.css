@@ -8,7 +8,6 @@
 body {
   background-color: #000;
   font-family: "Inika", serif;
-  color: #fff;
 }
 
 .page-container {
@@ -18,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #fff;
 }
 
 /* HEADER */
@@ -49,6 +49,13 @@ body {
   font-weight: 700;
 }
 
+/* NAV + PROFILE WRAPPER (RIGHT SIDE) */
+.nav-profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 /* NAVIGATION */
 .main-nav {
   display: flex;
@@ -62,11 +69,62 @@ body {
   font-weight: 500;
   letter-spacing: 0.8px;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav-link:hover,
 .nav-link:focus {
   color: #df583a;
+}
+
+.nav-link.active {
+  color: #df583a;
+  font-weight: 700;
+}
+
+.nav-link.home {
+  color: #fff;
+}
+
+.nav-link.meal {
+  color: #df583a;
+  font-weight: 700;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #df583a;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* PROFILE ICON */
+.profile-icon {
+  width: 35px;
+  height: 32px;
+  background-color: #0a0a0a;
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* DIET PLAN SECTION */

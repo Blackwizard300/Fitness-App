@@ -1,17 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="cardio monday.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardio Monday - VASK FITNESS</title>
+  <link rel="stylesheet" href="cardio monday.css" />
 </head>
+<body>
 <header class="nav-header">
   <nav class="nav-container">
     <div class="nav-brand">
       <img src="https://cdn.builder.io/api/v1/image/assets/79a2e33de9234da4b30b29f99e798822/1a2b279d63205da0f1533bc9da9c25df9ebca245?placeholderIfAbsent=true" alt="Vask Fitness Logo" class="brand-logo" />
       <h1 class="brand-name">VASK FITNESS</h1>
     </div>
-    <div class="nav-menu">
-      <a href="#" class="nav-link">Home</a>
-      <a href="#" class="nav-link">About us</a>
-      <a href="#" class="nav-link">Meal</a>
-      <a href="#" class="nav-link nav-link-active">Workout</a>
+
+    <div class="nav-profile-wrapper">
+      <div class="nav-menu">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About us</a>
+
+        <!-- Meal Dropdown -->
+        <div class="nav-link dropdown">
+          <a href="#" class="dropdown-toggle">Meal</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Weight Gain</a>
+            <a href="#" class="dropdown-item">Weight Loss</a>
+          </div>
+        </div>
+
+        <!-- Workout Dropdown -->
+        <div class="nav-link dropdown">
+          <a href="#" class="dropdown-toggle nav-link-active">Workout</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Weight Gain</a>
+            <a href="#" class="dropdown-item">Weight Loss</a>
+          </div>
+        </div>
+      </div>
+
       <img src="https://cdn.builder.io/api/v1/image/assets/79a2e33de9234da4b30b29f99e798822/70dabb4641fdacdc5e401a2306246c2dd71813c0?placeholderIfAbsent=true" alt="Menu Icon" class="menu-icon" />
     </div>
   </nav>
@@ -45,3 +71,5 @@
     </ul>
   </section>
 </main>
+</body>
+</html>

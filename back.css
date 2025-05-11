@@ -1,27 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Holtwood+One+SC&family=Crimson+Pro:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inika&display=swap');
 
 body {
   margin: 0;
   padding: 0;
+  background-color: #000;
+  font-family: "Inika", serif;
+  font-weight: 700;
+  color: #fff;
 }
 
 .nav-header {
-  background-color: #000;
   width: 100%;
+  background-color: #000;
 }
 
 .nav-content {
-  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.52);
-  z-index: 10;
   display: flex;
   width: 100%;
-  padding: 8px 37px;
-  align-items: flex-start;
+  padding: 8px 40px;
+  align-items: center;
   gap: 20px;
-  font-family: 'Inknut Antiqua', -apple-system, Roboto, Helvetica, sans-serif;
-  color: #fff;
-  font-weight: 700;
   flex-wrap: wrap;
   justify-content: space-between;
   box-sizing: border-box;
@@ -29,83 +28,144 @@ body {
 
 .brand-container {
   display: flex;
-  align-items: stretch;
-  gap: 11px;
-  font-size: 32px;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
 }
 
 .brand-logo {
-  aspect-ratio: 1;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
-  object-position: center;
-  width: 72px;
-  align-self: start;
 }
 
 .brand-name {
   margin: 0;
-  font-size: inherit;
-  font-weight: inherit;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
 }
 
 .main-nav {
   display: flex;
-  margin: auto 0;
   align-items: center;
-  gap: 64px;
-  font-size: 24px;
+  gap: 35px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  font-family: "Inika", serif;
 }
 
-.nav-link {
+/* Nav Link Styling */
+.nav-link,
+.dropdown-toggle {
   color: #fff;
   text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after,
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #df583a;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.dropdown-toggle:hover {
+  color: #df583a;
+}
+
+.nav-link:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
 }
 
 .nav-link-active {
-  color: rgb(223, 88, 58);
+  color: #df583a;
+  font-weight: 700;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 6px;
+  min-width: 150px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Inika", serif;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #df583a;
 }
 
 .menu-icon {
+  width: 35px;
   aspect-ratio: 1.09;
   object-fit: contain;
-  object-position: center;
-  width: 35px;
-  margin: auto 0;
+  transition: transform 0.3s ease;
 }
 
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Workout Content */
 .workout-content {
   position: relative;
-  min-height: 956px;
-  margin-top: -20px;
   padding: 86px 80px;
+  min-height: 956px;
   color: #fff;
 }
 
 .background-image {
   position: absolute;
   inset: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
   z-index: -1;
-  background-color:black; /* Set background to transparent */
 }
 
 .workout-title {
-  color: rgb(223, 88, 58);
   font-size: 64px;
-  font-family: 'Holtwood One SC', -apple-system, Roboto, Helvetica, sans-serif;
-  font-weight: 400;
   text-align: center;
-  margin: 0 0 41px;
+  color: #df583a;
+  margin-bottom: 40px;
 }
 
 .exercise-list {
   max-width: 829px;
   margin: 0 auto;
-  font-family: 'Crimson Pro', -apple-system, Roboto, Helvetica, sans-serif;
-  font-weight: 700;
   font-size: 36px;
 }
 
@@ -114,37 +174,32 @@ body {
 }
 
 .exercise-name {
-  color: rgb(223, 88, 58);
   font-size: 36px;
+  color: #df583a;
   margin: 0;
-  font-weight: 700;
 }
 
 .exercise-details {
-  color: #fff;
-  margin: 10px 0;
   padding-left: 40px;
+  margin: 10px 0;
 }
 
 .exercise-details li {
-  margin: 5px 0;
+  margin-bottom: 5px;
 }
 
+/* Responsive */
 @media (max-width: 991px) {
   .nav-content {
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 8px 20px;
   }
 
   .main-nav {
-    max-width: 100%;
+    flex-wrap: wrap;
   }
 
   .workout-content {
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 40px 20px;
   }
 
   .workout-title {
@@ -152,6 +207,6 @@ body {
   }
 
   .exercise-list {
-    max-width: 100%;
+    font-size: 28px;
   }
 }

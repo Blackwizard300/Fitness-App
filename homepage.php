@@ -1,0 +1,54 @@
+<?php
+session_start(); // Start the session
+
+// Check if the user is logged in
+
+// Retrieve the stored session values
+$firstname = $_SESSION['user_name'];
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vask Fitness</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="C:\Users\Nitro\OneDrive\Desktop\favicon.png" alt="Vask Fitness Logo">
+            <span>VASK FITNESS</span>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Meal</a>    <a href="./logout.php">Logout</a>
+
+            <a href="#">About us</a>
+            <a href="workout.html">Workout</a>
+            <?php
+            if($firstname == null){
+                echo '<a href="login.html" class="login">Login</a>';
+
+            }
+            
+            else{
+                echo $firstname;
+
+            }?>
+            
+        </nav>
+    </header>
+    <section class="hero">
+        <div>
+            <h2>Keep your</h2>
+            <h1>Body Fit &amp; Strong</h1>
+            <p>In here we will help you to shape and build your ideal body and live your life to the fullest.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+        <img src="C:\Users\Nitro\OneDrive\Desktop\home-img.png" alt="Fit Man">
+    </section>
+</body>
+</html>

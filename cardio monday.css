@@ -1,13 +1,13 @@
-/* Base Styles */
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  color: #DF583A;
+  background-color: #000;
+  color: #fff;
   font-weight: 700;
+  font-family: "Inika", serif;
 }
 
-/* Navigation Header */
+/* NAVIGATION */
 .nav-header {
   position: relative;
   width: 100%;
@@ -15,66 +15,134 @@ body {
 }
 
 .nav-container {
-  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.52);
+  border-radius: 10px;
   display: flex;
-  width: 100%;
-  padding: 8px 37px;
-  align-items: flex-start;
-  gap: 20px;
-  font-family: "Inknut Antiqua", -apple-system, Roboto, Helvetica, sans-serif;
-  color: #FFFFFF;
-  flex-wrap: wrap;
   justify-content: space-between;
-  box-sizing: border-box;
+  align-items: center;
+  padding: 8px 37px;
+  flex-wrap: wrap;
 }
 
 .nav-brand {
   display: flex;
-  align-items: stretch;
-  gap: 24px;
-  font-size: 32px;
+  align-items: center;
+  gap: 20px;
+  font-size: 28px;
 }
 
 .brand-logo {
-  aspect-ratio: 1;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
-  object-position: center;
-  width: 72px;
-  align-self: start;
 }
 
 .brand-name {
   margin: 0;
-  font-size: 32px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.nav-profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav-menu {
   display: flex;
-  margin: auto 0;
   align-items: center;
-  gap: 64px;
-  font-size: 24px;
+  gap: 35px;
+  font-size: 20px;
 }
 
-.nav-link {
-  color: #FFFFFF;
+.nav-link,
+.dropdown-toggle {
+  color: #fff;
   text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: 500;
 }
 
-.nav-link-active {
-  color: #DF583A;
+.nav-link:hover,
+.dropdown-toggle:hover,
+.nav-link:focus {
+  color: #df583a;
+}
+
+.nav-link-active,
+.dropdown-toggle.nav-link-active {
+  color: #df583a;
+  font-weight: 700;
+}
+
+.nav-link::after,
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #df583a;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
+}
+
+/* DROPDOWN STYLES */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 8px;
+  min-width: 150px;
+  z-index: 999;
+}
+
+.dropdown-item {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #df583a;
+}
+
+.nav-link.dropdown:hover .dropdown-menu,
+.dropdown-toggle:hover + .dropdown-menu {
+  display: flex;
 }
 
 .menu-icon {
+  width: 35px;
   aspect-ratio: 1.09;
   object-fit: contain;
-  object-position: center;
-  width: 35px;
-  margin: auto 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Main Content */
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+/* MAIN CONTENT */
 .main-content {
   position: relative;
   min-height: 1024px;
@@ -90,71 +158,64 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: center;
   z-index: 0;
 }
 
 .workout-title {
   position: relative;
   font-size: 64px;
-  font-family: "Holtwood One SC", -apple-system, Roboto, Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   align-self: center;
   margin-top: 20px;
   z-index: 1;
+  color: #df583a;
 }
 
-/* Workout Details */
 .workout-details {
   position: relative;
-  font-size: 36px;
-  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 28px;
   align-self: start;
   margin: 56px 0 -26px 41px;
   z-index: 1;
 }
 
 .workout-details h3 {
-  color: #DF583A;
+  color: #df583a;
   margin: 20px 0 10px;
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .workout-details ul {
-  margin: 0;
   padding-left: 40px;
 }
 
 .workout-details li {
-  color: #FFFFFF;
   margin: 5px 0;
 }
 
-/* Responsive Styles */
+/* RESPONSIVE */
 @media (max-width: 991px) {
   .nav-container {
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 8px 20px;
   }
 
   .nav-menu {
-    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   .main-content {
-    max-width: 100%;
     padding-bottom: 100px;
   }
 
   .workout-title {
-    max-width: 100%;
     font-size: 40px;
+    text-align: center;
   }
 
   .workout-details {
-    max-width: 100%;
-    margin-bottom: 10px;
-    margin-top: 40px;
+    font-size: 22px;
+    margin: 40px 20px;
+    text-align: center;
   }
 }

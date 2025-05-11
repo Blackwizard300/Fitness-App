@@ -6,6 +6,7 @@ body {
   color: #fff;
   font-weight: 700;
   min-height: 100vh;
+  font-family: "Inika", serif;
 }
 
 /* Header styles */
@@ -20,10 +21,9 @@ body {
   background-color: rgba(0, 0, 0, 0.52);
   display: flex;
   width: 100%;
-  padding: 8px 37px;
-  align-items: flex-start;
+  padding: 8px 40px;
+  align-items: center;
   gap: 20px;
-  font-family: "Inknut Antiqua", -apple-system, Roboto, Helvetica, sans-serif;
   flex-wrap: wrap;
   justify-content: space-between;
   box-sizing: border-box;
@@ -32,40 +32,52 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 8px;
 }
 
 .logo-image {
-  width: 72px;
-  height: 72px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
 .brand-name {
-  font-size: 32px;
+  font-size: 28px;
   margin: 0;
+  font-weight: 700;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 64px;
-  font-size: 24px;
+  gap: 35px;
+  font-size: 20px;
   margin: auto 0;
+  letter-spacing: 0.8px;
+  font-weight: 500;
 }
 
-.nav-link {
+/* Links */
+.nav-link,
+.dropdown-toggle {
   color: #fff;
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  transition: color 0.3s ease;
 }
 
-/* Hover effect for nav-link */
-.nav-link::after {
+.nav-link:hover,
+.nav-link:focus,
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+  color: #df583a;
+}
+
+.nav-link::after,
+.dropdown-toggle::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   width: 0;
   height: 2px;
@@ -73,35 +85,32 @@ body {
   transition: width 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #df583a; /* Change text color */
-}
-
 .nav-link:hover::after,
-.nav-link:focus::after {
-  width: 100%; /* Underline the text */
+.nav-link:focus::after,
+.dropdown-toggle:hover::after,
+.dropdown-toggle:focus::after {
+  width: 100%;
 }
 
-/* Active link styles */
 .nav-link-active {
   color: rgb(223, 88, 58);
+  font-weight: 700;
 }
 
+/* Menu icon */
 .menu-icon {
   width: 35px;
   aspect-ratio: 1.09;
   object-fit: contain;
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  transition: transform 0.3s ease;
 }
 
-/* Hover effect for menu-icon */
 .menu-icon:hover,
 .menu-icon:focus {
-  transform: scale(1.1); /* Apply scaling effect */
+  transform: scale(1.1);
 }
 
-/* Main content styles */
+/* Main content */
 .workout-content {
   position: relative;
   min-height: 1024px;
@@ -148,7 +157,48 @@ body {
   margin-bottom: 5px;
 }
 
-/* Media queries */
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #000;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #df583a;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Responsive */
 @media (max-width: 991px) {
   .nav-container {
     padding-left: 20px;
@@ -158,7 +208,7 @@ body {
 
   .main-nav {
     max-width: 100%;
-    gap: 40px;
+    gap: 30px;
   }
 
   .exercise-list {

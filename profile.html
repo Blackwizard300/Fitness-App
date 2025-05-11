@@ -1,54 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile - VASK FITNESS</title>
-    <link rel="stylesheet" href="profile.css" />
-  </head>
-  <body>
-    <main class="page-container">
-      <div class="content-wrapper">
-        <header class="navigation-bar">
-          <div class="logo-container">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a2b279d63205da0f1533bc9da9c25df9ebca245?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-              alt="Vask Fitness Logo"
-              class="logo-image"
-            />
-            <h1 class="brand-name">VASK FITNESS</h1>
-          </div>
-
-          <nav class="nav-menu">
-            <a href="#" class="nav-item">Home</a>
-            <a href="#" class="nav-item">Meal</a>
-            <a href="#" class="nav-item">About us</a>
-            <a href="#" class="nav-item">Workout</a>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7475bfa89d985117dd1e4edcd1a2a69686a78f0?placeholderIfAbsent=true&apiKey=d00569c252494ad98a606b889114629f" alt="Menu icon" class="menu-icon" />
-          </nav>
-        </header>
-
-        <section class="profile-section">
-          <h2 class="profile-title">Profile</h2>
-
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3c441a08629667316ef5511728a7fe9161a0dce?placeholderIfAbsent=true&apiKey=d00569c252494ad98a606b889114629f" alt="Profile picture" class="profile-image" />
-
-          <div class="profile-details">
-            <div class="details-column">
-              <p class="detail-item">First Name:</p>
-              <p class="detail-item">Last Name:</p>
-              <p class="detail-item">Display Name:</p>
-              <p class="detail-item">Age:</p>
-            </div>
-
-            <div class="details-column">
-              <p class="detail-item">Email:</p>
-              <p class="detail-item">Gender:</p>
-              <p class="detail-item">Phone number</p>
-            </div>
-          </div>
-        </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VASK FITNESS - Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <header class="nav-header">
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2" alt="Vask Fitness Logo" class="brand-logo" />
+        <h1 class="brand-name">VASK FITNESS</h1>
       </div>
-    </main>
-  </body>
+
+      <div class="nav-menu">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About us</a>
+
+        <div class="nav-link dropdown">
+          <a href="#" class="dropdown-toggle">Meal</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Weight Gain</a>
+            <a href="#" class="dropdown-item">Weight Loss</a>
+          </div>
+        </div>
+
+        <div class="nav-link dropdown">
+          <a href="#" class="dropdown-toggle">Workout</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Weight Gain</a>
+            <a href="#" class="dropdown-item">Weight Loss</a>
+          </div>
+        </div>
+
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/70dabb4641fdacdc5e401a2306246c2dd71813c0" class="user-icon" alt="User Icon" />
+      </div>
+    </nav>
+  </header>
+
+  <main class="profile-page">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/04dca3f3539d4f4b238610897fe19e1e0e6b74a9" class="background-image" alt="Profile Background" />
+
+    <h2 class="profile-title">Profile</h2>
+
+    <div class="profile-section">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/15bd93239546b06f33ca3cec6c1b6fc5ae2dba60" class="profile-pic" alt="User Picture" />
+
+      <div class="profile-details">
+        <div class="column">
+          <p class="detail-label">First Name:</p>
+          <p class="detail-label">Last Name:</p>
+          <p class="detail-label">Display Name:</p>
+          <p class="detail-label">Email:</p>
+        </div>
+        <div class="column">
+          <p class="detail-label">Age:</p>
+          <p class="detail-label">Gender:</p>
+          <p class="detail-label">Weight:</p>
+          <p class="detail-label">Height:</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
 </html>

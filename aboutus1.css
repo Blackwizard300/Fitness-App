@@ -1,166 +1,246 @@
-@import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&display=swap");
-
-:root {
-  --primary-bg: #111517;
-  --header-bg: rgba(0, 0, 0, 0.52);
-  --text-white: #fff;
-  --text-brown: #8b7575;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-color: var(--primary-bg);
+  background-color: #000;
+  font-family: "Inter", sans-serif;
 }
 
-.header {
+/* HEADER */
+.site-header {
+  width: 100%;
   height: 88px;
+  padding: 0 40px;
+  background-color: rgba(0, 0, 0, 0.52);
   display: flex;
   align-items: center;
-  padding: 0 50px;
+  justify-content: space-between;
   position: relative;
-  background-color: var(--header-bg);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-  width: 72px;
-  height: 72px;
-  margin-right: 11px;
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
 }
 
 .brand-name {
-  color: var(--text-white);
-  font-family: "Inknut Antiqua", serif;
-  font-size: 32px;
+  font-size: 28px;
+  color: #fff;
   font-weight: 700;
-  margin: 0;
 }
 
-.navigation {
+/* NAVIGATION */
+.main-nav {
   display: flex;
-  gap: 48px;
-  margin-left: auto;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-link,
+.nav-link.dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .nav-link {
-  color: var(--text-white);
-  font-family: "Inknut Antiqua", serif;
-  font-size: 24px;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #df583a;
+}
+
+.nav-link.active {
+  color: #df583a;
   font-weight: 700;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #df583a;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* DROPDOWN MENU */
+.dropdown-toggle {
+  font-size: 20px;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
+  font-weight: 500;
+  padding: 10px 0;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.main-content {
-  background: url("https://cdn.builder.io/api/v1/image/assets/TEMP/a3bd1525ed2e58c7083355956668a15379c99241")
-    no-repeat;
-  background-size: cover;
-  min-height: calc(100vh - 88px);
-  padding: 31px 42px;
+.dropdown-toggle:hover {
+  color: #df583a;
 }
 
-.about-section {
-  max-width: 625px;
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #df583a;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
 }
 
-.about-title {
-  color: var(--text-brown);
-  font-family: "Inknut Antiqua", serif;
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.dropdown-toggle:hover::after {
+  width: 100%;
 }
 
-.about-description {
-  color: var(--text-brown);
-  font-family: "Jersey 25", sans-serif;
-  font-size: 40px;
-  white-space: pre-line;
-  margin: 0;
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  z-index: 1000;
 }
 
-.contact-section {
+.dropdown-item {
+  font-size: 18px;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #df583a;
+}
+
+/* Show dropdown on hover */
+.nav-link.dropdown:hover .dropdown-menu {
   display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin-top: auto;
-  padding-top: 300px;
 }
 
-.contact-item {
+/* PROFILE ICON */
+.profile-icon {
+  width: 35px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  position: relative;
+  width: 100%;
+}
+
+.about-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.about-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  padding: 142px 22px;
 }
 
-.icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.about-title {
+  color: #df583a;
+  font-size: 64px;
+  margin: 0 0 165px 0;
 }
 
-.contact-icon {
-  width: 35px;
-  height: 35px;
+.about-description {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.5;
+  max-width: 1396px;
+  margin: 0;
 }
 
-.contact-text {
-  color: var(--text-white);
-  font-family: "Jersey 25", sans-serif;
-  font-size: 20px;
-}
-
+/* RESPONSIVE */
 @media (max-width: 991px) {
-  .navigation {
-    gap: 24px;
+  .main-nav {
+    display: none;
   }
 
-  .nav-link {
-    font-size: 20px;
+  .about-title {
+    font-size: 48px;
   }
 
   .about-description {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
 @media (max-width: 640px) {
-  .header {
-    padding: 0 20px;
-    height: 70px;
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .brand-name {
-    font-size: 24px;
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .main-content {
-    padding: 20px;
-  }
-
   .about-title {
-    font-size: 32px;
+    font-size: 36px;
+    margin-bottom: 80px;
   }
 
   .about-description {
     font-size: 24px;
-  }
-
-  .contact-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding-top: 100px;
   }
 }

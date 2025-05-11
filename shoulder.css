@@ -1,19 +1,29 @@
-/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inika&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  font-family: "Inika", serif;
+  color: #fff;
+}
+
 .workout-page {
-  background-color: #000000;  /* Changed background to black */
-  overflow: hidden;
-  color: #ffffff;  /* Text color remains white for contrast */
-  font-weight: 400;
+  background-color: #000;
+  font-weight: 700;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .page-container {
-  display: flex;
-  flex-direction: column;
   position: relative;
   min-height: 1024px;
   width: 100%;
   padding-bottom: 54px;
-  align-items: stretch;
 }
 
 .background-image {
@@ -23,140 +33,194 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.5);  /* Darken the background image for better contrast */
+  z-index: 0;
 }
 
-/* Navigation Styles */
-.navigation-header {
+/* HEADER */
+.main-nav {
   position: relative;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.52);  /* Darken the navigation background */
+  background-color: #000;
   display: flex;
-  width: 100%;
-  padding: 10px 20px; /* Adjusted padding */
-  align-items: flex-start;
-  gap: 20px;
-  font-family: "Inknut Antiqua", -apple-system, Roboto, Helvetica, sans-serif;
-  font-weight: 700;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 88px;
+  z-index: 2;
+  flex-wrap: wrap;
 }
 
-.logo-container {
+.brand-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Reduced gap between logo and brand name */
+  gap: 8px;
 }
 
-.logo-image {
-  aspect-ratio: 1;
+.brand-logo {
+  width: 50px;
+  height: 50px;
   object-fit: contain;
-  object-position: center;
-  width: 72px;
-  align-self: start;
-  flex-shrink: 0;
 }
 
 .brand-name {
-  flex-grow: 1;
-  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
 }
 
-.nav-menu {
+/* NAVIGATION */
+.navigation {
   display: flex;
-  margin: auto 0;
   align-items: center;
-  gap: 20px; /* Reduced gap */
-  font-size: 18px; /* Reduced font size */
-  flex-wrap: wrap;
+  gap: 35px;
+  font-size: 20px;
+  font-family: "Inika", serif;
 }
 
-.nav-link {
-  color: #ffffff;
+.nav-link,
+.dropdown-toggle {
+  color: #fff;
   text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.nav-link.active {
-  color: rgba(223, 88, 58, 1);
+.nav-link:hover,
+.dropdown-toggle:hover {
+  color: #DF583A;
 }
 
+.nav-link::after,
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0;
+  background-color: #DF583A;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
+}
+
+.nav-link-active {
+  color: #DF583A;
+  font-weight: 700;
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #000;
+  padding: 8px 0;
+  border-radius: 6px;
+  min-width: 150px;
+  z-index: 999;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: "Inika", serif;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #DF583A;
+}
+
+/* ICON */
 .menu-icon {
+  width: 35px;
   aspect-ratio: 1.09;
   object-fit: contain;
   object-position: center;
-  width: 25px; /* Smaller size for menu icon */
-  margin: auto 0;
-  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-/* Workout Title */
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+/* WORKOUT CONTENT */
 .workout-title {
-  color: rgba(223, 88, 58, 1);
+  color: #DF583A;
   font-size: 64px;
-  font-family: "Holtwood One SC", -apple-system, Roboto, Helvetica, sans-serif;
-  align-self: center;
-  margin-top: 60px;
+  font-family: "Inika", serif;
   text-align: center;
+  margin-top: 60px;
+  z-index: 1;
+  position: relative;
 }
 
-/* Workout Content */
 .workout-content {
-  font-size: 20px; /* Adjusted font size for readability */
-  font-family: "Crimson Pro", -apple-system, Roboto, Helvetica, sans-serif;
-  align-self: start;
+  font-size: 36px;
+  font-family: "Inika", serif;
   margin-left: 51px;
-  color: #ffffff; /* White text color */
-  padding-top: 20px; /* Ensure some space from the top */
+  position: relative;
+  z-index: 1;
 }
 
-/* Exercise Section */
 .exercise-section {
   margin-bottom: 20px;
-  display: block;
-  visibility: visible;
-  opacity: 1; /* Ensure it's fully visible */
-  padding: 10px;
 }
 
 .exercise-title {
-  color: rgba(223, 88, 58, 1);
+  color: #DF583A;
   font-size: 36px;
-  margin: 0 0 10px 0;
   font-weight: normal;
 }
 
 .exercise-details {
-  margin: 0;
+  margin: 10px 0;
   padding-left: 20px;
+  color: #fff;
 }
 
 .exercise-details li {
-  margin-bottom: 5px;
+  margin: 5px 0;
 }
 
-/* Responsive Design */
+/* RESPONSIVE */
 @media (max-width: 991px) {
-  .page-container {
-    max-width: 100%;
+  .main-nav {
+    padding: 0 20px;
   }
 
-  .navigation-header {
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .nav-menu {
-    max-width: 100%;
+  .navigation {
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
   .workout-title {
-    max-width: 100%;
-    margin-top: 40px;
     font-size: 40px;
+    margin-top: 40px;
   }
 
   .workout-content {
-    max-width: 100%;
+    font-size: 28px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
