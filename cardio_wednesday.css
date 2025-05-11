@@ -1,0 +1,215 @@
+/* Base Styling */
+.nav-container {
+  background-color: #000;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Inika", serif;
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 1024px;
+  width: 100%;
+  padding-bottom: 377px;
+  align-items: stretch;
+}
+
+@media (max-width: 991px) {
+  .nav-content {
+    padding-bottom: 100px;
+  }
+}
+
+.background-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.navigation-bar {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.52);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 37px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .navigation-bar {
+    padding: 8px 20px;
+  }
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 32px;
+}
+
+.brand-logo {
+  width: 72px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.brand-name {
+  margin: 0;
+  font-size: inherit;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px 64px;
+  font-size: 24px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .nav-links {
+    justify-content: center;
+  }
+}
+
+.nav-link,
+.dropdown-toggle {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.dropdown-toggle:hover {
+  color: #df583a;
+}
+
+.nav-link.active,
+.dropdown-toggle.active {
+  color: #df583a;
+  font-weight: 700;
+}
+
+.nav-link::after,
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #df583a;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
+}
+
+.user-icon {
+  width: 35px;
+  aspect-ratio: 1.09;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  min-width: 150px;
+  padding: 10px 0;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #df583a;
+}
+
+.nav-link.dropdown:hover .dropdown-menu,
+.dropdown-toggle:hover + .dropdown-menu {
+  display: flex;
+}
+
+/* Workout Section */
+.workout-title {
+  text-align: center;
+  font-size: 64px;
+  color: #df583a;
+  font-family: "Holtwood One SC", serif;
+  margin-top: 18px;
+}
+
+@media (max-width: 991px) {
+  .workout-title {
+    font-size: 40px;
+  }
+}
+
+.workout-details {
+  font-size: 36px;
+  font-family: "Istok Web", sans-serif;
+  margin: 73px 0 -75px 44px;
+}
+
+@media (max-width: 991px) {
+  .workout-details {
+    font-size: 24px;
+    margin: 40px 20px 10px;
+  }
+}
+
+.exercise-section {
+  color: #df583a;
+  margin: 0;
+  font-weight: bold;
+}
+
+.exercise-list {
+  margin: 10px 0 20px;
+  padding-left: 40px;
+  color: #fff;
+}
+
+.exercise-list li {
+  margin-bottom: 5px;
+}

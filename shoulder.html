@@ -1,71 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="shoulder.css" />
-  </head>
-  <header class="header">
-    <div class="header-container">
-      <div class="brand">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2"
-          alt="Logo"
-          class="brand-logo"
-        />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shoulders Workout</title>
+  <link rel="stylesheet" href="shoulder.css" />
+</head>
+<body>
+
+<div class="workout-page">
+  <div class="page-container">
+    <img src="https://cdn.builder.io/api/v1/image/assets/beadebc2327f4b1080f7e8c568788d2b/63f69600960412d09aa40d3da0346e55ab228c11?placeholderIfAbsent=true" alt="Background" class="background-image" />
+
+    <header class="main-nav">
+      <div class="brand-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/beadebc2327f4b1080f7e8c568788d2b/1a2b279d63205da0f1533bc9da9c25df9ebca245?placeholderIfAbsent=true" alt="Vask Fitness Logo" class="brand-logo" />
         <h1 class="brand-name">VASK FITNESS</h1>
       </div>
-      <nav class="main-nav" id="navbar">
-      
-        <svg
-          class="profile-icon"
-          width="54"
-          height="54"
-          viewBox="0 0 54 54"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="54" height="54" fill="#F5EBEB"></rect>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M27 30.375C29.3869 30.375 31.6761 29.4268 33.364 27.739C35.0518 26.0511 36 23.7619 36 21.375C36 18.9881 35.0518 16.6989 33.364 15.011C31.6761 13.3232 29.3869 12.375 27 12.375C24.6131 12.375 22.3239 13.3232 20.636 15.011C18.9482 16.6989 18 18.9881 18 21.375C18 23.7619 18.9482 26.0511 20.636 27.739C22.3239 29.4268 24.6131 30.375 27 30.375ZM27 28.125C27.8864 28.125 28.7642 27.9504 29.5831 27.6112C30.4021 27.272 31.1462 26.7748 31.773 26.148C32.3998 25.5212 32.897 24.7771 33.2362 23.9581C33.5754 23.1392 33.75 22.2614 33.75 21.375C33.75 20.4886 33.5754 19.6108 33.2362 18.7919C32.897 17.9729 32.3998 17.2288 31.773 16.602C31.1462 15.9752 30.4021 15.478 29.5831 15.1388C28.7642 14.7996 27.8864 14.625 27 14.625C25.2098 14.625 23.4929 15.3362 22.227 16.602C20.9612 17.8679 20.25 19.5848 20.25 21.375C20.25 23.1652 20.9612 24.8821 22.227 26.148C23.4929 27.4138 25.2098 28.125 27 28.125Z"
-            fill="black"
-          ></path>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M49.5 27C49.5 39.4268 39.4268 49.5 27 49.5C14.5733 49.5 4.5 39.4268 4.5 27C4.5 14.5733 14.5733 4.5 27 4.5C39.4268 4.5 49.5 14.5733 49.5 27ZM37.8338 44.1112C34.5952 46.1681 30.8365 47.2571 27 47.25C23.0719 47.2571 19.2274 46.1153 15.9401 43.965C15.6701 43.6275 15.3964 43.2788 15.1189 42.9188C14.797 42.4971 14.6234 41.981 14.625 41.4506C14.625 40.239 15.4958 39.2231 16.6601 39.0532C24.3608 37.9282 29.6629 38.025 37.3736 39.0926C37.9317 39.1742 38.4416 39.4547 38.8093 39.8824C39.1771 40.3101 39.378 40.8562 39.375 41.4202C39.375 41.9603 39.1894 42.4845 38.8541 42.894C38.5084 43.3147 38.1683 43.7205 37.8338 44.1112ZM41.6081 41.0243C41.4281 38.9183 39.8295 37.161 37.6819 36.864C29.7889 35.7716 24.2719 35.667 16.335 36.8269C14.175 37.1419 12.5831 38.9149 12.3941 41.0265C8.76637 37.2589 6.74285 32.2302 6.75 27C6.75 15.8164 15.8164 6.75 27 6.75C38.1836 6.75 47.25 15.8164 47.25 27C47.2572 32.2291 45.2345 37.2569 41.6081 41.0243Z"
-            fill="black"
-          ></path>
-        </svg>
+
+      <nav class="navigation">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About us</a>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Meal</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Weight Gain</a>
+            <a href="#" class="dropdown-item">Weight Loss</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle nav-link-active">Workout</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Weight Loss</a>
+            <a href="#" class="dropdown-item">Weight Gain</a>
+
+          </div>
+        </div>
+
+        <img src="https://cdn.builder.io/api/v1/image/assets/beadebc2327f4b1080f7e8c568788d2b/70dabb4641fdacdc5e401a2306246c2dd71813c0?placeholderIfAbsent=true" alt="Menu Icon" class="menu-icon" />
+
       </nav>
-    </div>
-  </header>
-  
-  <main class="main-content">
-    <div class="workout-container">
-      <div class="workout-details">
-        <h2 class="workout-title">Shoulder</h2>
-        <ul class="exercise-list">
-          <li class="exercise-item">Overhead Press (Barbell/Dumbbell) 3*12</li>
-          <li class="exercise-item">Lateral Raises (Dumbbells/Cables) 3*12</li>
-          <li class="exercise-item">Arnold Press 3*12</li>
-          <li class="exercise-item">Face Pulls (Cable/Bands) 3*12</li>
-          <li class="exercise-item">Reverse Pec Deck Machine 3*12</li>
-          <li class="exercise-item">Barbell/Dumbbell Shrugs 3*12</li>
+    </header>
+
+    <h1 class="workout-title">Shoulders Workout</h1>
+
+    <article class="workout-content">
+      <section class="exercise-section">
+        <h2 class="exercise-title">1. Overhead Barbell Press – 4 sets x 6-8</h2>
+        <ul class="exercise-details">
+          <li>Heavy compound movement</li>
+          <li>Keep your core tight and avoid over-arching</li>
         </ul>
-      </div>
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad1dd30afed230da62b264658de586c00f1790f7"
-        alt="Workout"
-        class="workout-image"
-      />
-    </div>
-  </main>
-  <script>
-    fetch('navbar.php')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-      })
-      .catch(error => {
-        console.error('Error loading navbar:', error);
-      });
-  </script>
+
+      </section>
+
+      <section class="exercise-section">
+        <h2 class="exercise-title">2. Dumbbell Lateral Raises – 4 sets x 12-15</h2>
+        <ul class="exercise-details">
+          <li>Slow and controlled</li>
+          <li>Slight lean forward, lead with your elbows</li>
+        </ul>
+      </section>
+
+      <section class="exercise-section">
+        <h2 class="exercise-title">3. Arnold Press – 3 sets x 10-12</h2>
+        <ul class="exercise-details">
+          <li>Great for front delts and overall shape</li>
+          <li>Rotate through the motion for full range</li>
+        </ul>
+      </section>
+
+      <section class="exercise-section">
+        <h2 class="exercise-title">4. Cable Rear Delt Fly – 3 sets x 12-15</h2>
+        <ul class="exercise-details">
+          <li>Focus on rear delts — don't let traps take over</li>
+          <li>Can do bent-over dumbbell reverse flys instead</li>
+        </ul>
+      </section>
+
+      <section class="exercise-section">
+        <h2 class="exercise-title">5. Upright Rows – 3 sets x 10-12</h2>
+        <ul class="exercise-details">
+          <li>Hits traps and side delts</li>
+          <li>Keep elbows above wrists</li>
+        </ul>
+      </section>
+
+      <section class="exercise-section">
+        <h2 class="exercise-title">6. Face Pulls – 3 sets x 15</h2>
+        <ul class="exercise-details">
+          <li>Posterior chain + rotator cuff health</li>
+          <li>Pull to your nose/eyes with rope</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+</div>
+
+</body>
+</html>
+

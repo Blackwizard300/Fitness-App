@@ -1,88 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VASK FITNESS - Sign Up</title>
   <link rel="stylesheet" href="signup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Crimson+Text:wght@700&family=Inder&family=Inconsolata:wght@700&display=swap" rel="stylesheet" />
 </head>
-<main class="signup-container">
-  <h1 class="signup-title">Sign Up</h1>
-  <form class="signup-form" action="./register.php" method="post">
-    <div class="form-fields">
-      <div class="input-wrapper">
-        <input
-          type="text"
-          class="form-input" name="firstname"
-          required
-          aria-label="First Name"
-          placeholder=" "
-        />
-        <label class="input-label">
-          <span>First Name</span>
-          <span class="required">*</span>
-        </label>
-      </div>
 
-      <div class="input-wrapper">
-        <input
-          type="text"
-          class="form-input" name="lastname"
-          required
-          aria-label="Last Name"
-          placeholder=" "
-        />
-        <label class="input-label">
-          <span>Last Name</span>
-          <span class="required">*</span>
-        </label>
-      </div>
+<body>
 
-      <div class="input-wrapper">
-        <input
-          type="email"
-          class="form-input" name="email"
-          required
-          aria-label="Email"
-          placeholder=" "
-        />
-        <label class="input-label">
-          <span>Email</span>
-          <span class="required">*</span>
-        </label>
-      </div>
+  <!-- BRAND LOGO + NAME -->
+  <div class="brand-header">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2?placeholderIfAbsent=true" alt="Logo" class="brand-logo" />
+    <h1 class="brand-name">VASK FITNESS</h1>
+  </div>
 
-      <div class="input-wrapper">
-        <input
-          type="password"
-          class="form-input" name="password"
-          required
-          aria-label="Password"
-          placeholder=" "
-        />
-        <label class="input-label">
-          <span>Password</span>
-          <span class="required">*</span>
-        </label>
-      </div>
+  <!-- MAIN CONTAINER -->
+  <main class="signup-container">
 
-      <div class="input-wrapper">
-        <input
-          type="tel"
-          class="form-input" name="phone"
-          required
-          aria-label="Phone number"
-          placeholder=" "
-        />
-        <label class="input-label">
-          <span>Phone number</span>
-          <span class="required">*</span>
-        </label>
-      </div>
+    <!-- SIGNUP FORM -->
+    <div class="signup-form-wrapper">
+      <h2 class="signup-heading">Sign Up</h2>
+      <form class="signup-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" id="firstName" class="form-input" name="firstName" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" id="lastName" class="form-input" name="lastName" required />
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-input" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-input" name="password" required />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone No</label>
+          <input type="tel" id="phone" class="form-input" name="phone" required />
+        </div>
+        <div class="button-container">
+          <button type="submit" class="continue-button">Continue →</button>
+        </div>
+        <p class="login-prompt">
+          Already have an account? <a href="login.html" class="login-link">Log In</a>
+        </p>
+      </form>
     </div>
 
-    <p class="login-text">
-      <span>Already have a account?</span>
-      <a href="login.html" class="login-link">Log In</a>
-    </p>
+    <!-- BACKGROUND IMAGE -->
+    <div class="signup-right">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f44b3a7f840fd7e2c1f08afbedd4a7441e8fb0e8?placeholderIfAbsent=true" alt="Background" class="background-image" />
+    </div>
 
-    <button type="submit" class="continue-button">Continue</button>
-  </form>
-</main>
+  </main>
+
+</body>
+</html>

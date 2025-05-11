@@ -1,168 +1,230 @@
-.navigation-bar {
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.52);
-    display: flex;
-    width: 100%;
-    padding: 8px 22px;
-    align-items: flex-start;
+
+@import url('https://fonts.googleapis.com/css2?family=Inika&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000;
+  font-family: "Inika", serif;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* HEADER NAVIGATION */
+.nav-header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 40px;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* NAV LINKS & DROPDOWNS */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.nav-link,
+.dropdown-toggle {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Inika", serif;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.dropdown-toggle:hover {
+  color: #df583a;
+}
+
+.nav-link::after,
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #df583a;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  border-radius: 6px;
+  padding: 8px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: "Inika", serif;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #df583a;
+}
+
+/* USER ICON */
+.user-icon {
+  width: 35px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+}
+
+/* PROFILE PAGE */
+.profile-page {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.profile-title {
+  color: #df583a;
+  font-size: 64px;
+  margin-top: 120px;
+  z-index: 2;
+}
+
+.profile-section {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.profile-pic {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+/* PROFILE DETAILS */
+.profile-details {
+  display: flex;
+  gap: 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-label {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-wrap: wrap;
     gap: 20px;
-    font-family:
-      "Inknut Antiqua",
-      -apple-system,
-      Roboto,
-      Helvetica,
-      sans-serif;
-    font-weight: 700;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
-  
-  @media (max-width: 991px) {
-    .navigation-bar {
-      max-width: 100%;
-      padding-left: 20px;
-    }
+
+  .profile-title {
+    font-size: 48px;
+    margin-top: 100px;
   }
-  
-  .logo-container {
-    align-self: start;
-    display: flex;
-    align-items: stretch;
-    gap: 11px;
-    font-size: 32px;
-  }
-  
-  .logo-image {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 72px;
-    align-self: start;
-    flex-shrink: 0;
-  }
-  
-  .brand-name {
-    flex-basis: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
-    color: rgba(255, 255, 255, 1);
-    margin: 0;
-  }
-  
-  .nav-links {
-    display: flex;
-    margin-top: auto;
-    margin-bottom: auto;
-    align-items: stretch;
-    gap: 40px 67px;
-    font-size: 24px;
-    flex-wrap: wrap;
-  }
-  
-  @media (max-width: 991px) {
-    .nav-links {
-      max-width: 100%;
-    }
-  }
-  
-  .nav-link {
-    color: rgba(255, 255, 255, 1);
-    text-decoration: none;
-    flex-grow: 1;
-  }
-  
-  .menu-icon {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 54px;
-    align-self: start;
-    margin-top: 8px;
-    flex-shrink: 0;
-  }
-  
-  .profile-container {
-    display: flex;
-    margin-top: 30px;
-    margin-left: 168px;
-    width: 767px;
-    max-width: 100%;
-    flex-direction: column;
-    align-items: start;
-    font-family:
-      "Jersey 25",
-      -apple-system,
-      Roboto,
-      Helvetica,
-      sans-serif;
-    font-weight: 400;
-  }
-  
-  .profile-heading {
-    font-size: 64px;
-    color: rgba(255, 255, 255, 1);
-    margin: 0;
-  }
-  
-  @media (max-width: 991px) {
-    .profile-heading {
-      font-size: 40px;
-    }
-  }
-  
-  .profile-picture {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 293px;
-    margin-top: 32px;
-    max-width: 100%;
-  }
-  
+
   .profile-details {
-    align-self: stretch;
-    display: flex;
-    margin-top: 39px;
-    align-items: start;
-    gap: 40px 100px;
-    font-size: 40px;
-    flex-wrap: wrap;
-  }
-  
-  @media (max-width: 991px) {
-    .profile-details {
-      max-width: 100%;
-    }
-  }
-  
-  .details-column {
-    display: flex;
-    margin-top: 8px;
     flex-direction: column;
-    align-items: start;
-    flex: 1;
+    gap: 40px;
   }
-  
-  .detail-label {
-    color: rgba(255, 255, 255, 1);
-    margin: 0;
-    margin-top: 32px;
+
+  .dropdown-menu {
+    left: auto;
+    right: 0;
   }
-  
-  .detail-label:first-child {
-    margin-top: 0;
-  }
-  
-  body {
-    background-color: rgba(17, 21, 23, 1);
-    padding-bottom: 195px;
-    overflow: hidden;
-    margin: 0;
-  }
-  
-  @media (max-width: 991px) {
-    body {
-      padding-bottom: 100px;
-    }
-  }
-  
+}
+

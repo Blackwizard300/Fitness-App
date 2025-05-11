@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Holtwood+One+SC&family=Crimson+Pro&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #111517;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  object-fit: cover;
+}
+
+.navigation-bar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  padding: 8px 26px;
+  height: 88px;
+  box-sizing: border-box;
+}
+
+.company-logo {
+  width: 72px;
+  height: 72px;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-family: "Inknut Antiqua", serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-left: 11px;
+  margin-bottom: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 41px;
+  margin-left: auto;
+}
+
+.nav-item {
+  color: #ffffff;
+  font-family: "Inknut Antiqua", serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.profile-icon {
+  margin-left: 61px;
+}
+
+.admin-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 114px;
+  position: relative;
+  z-index: 10;
+}
+
+.admin-title {
+  color: #df583a;
+  font-family: "Holtwood One SC", serif;
+  font-size: 64px;
+  margin-bottom: 23px;
+  text-align: center;
+}
+
+.admin-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 51px;
+}
+
+.admin-button {
+  color: #000000;
+  font-family: "Crimson Pro", serif;
+  font-size: 32px;
+  width: 365px;
+  height: 59px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-button:hover {
+  background-color: #c5c5c5;
+}
+
+@media (max-width: 991px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-title {
+    font-size: 48px;
+  }
+
+  .admin-button {
+    width: 90%;
+    max-width: 365px;
+  }
+}
