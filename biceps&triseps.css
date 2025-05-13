@@ -1,25 +1,4 @@
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #000;
-  font-family: "Inika", serif;
-  color: #fff;
-  min-height: 100vh;
-}
-
-.nav-header {
-  position: relative;
-  min-height: 1024px;
-  width: 100%;
-  padding-bottom: 38px;
-  display: flex;
-  flex-direction: column;
-}
 
 .background-image {
   position: absolute;
@@ -31,136 +10,19 @@ body {
   z-index: -1;
 }
 
-.main-nav {
-  position: relative;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.52);
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 40px;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.brand-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
-
-.brand-name {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-/* NAVIGATION */
-.nav-profile-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 35px;
-  font-size: 20px;
-  letter-spacing: 0.5px;
-}
-
-.nav-link,
-.dropdown-toggle {
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
-  font-weight: 500;
-}
-
-.nav-link:hover,
-.dropdown-toggle:hover,
-.nav-link:focus {
-  color: #df583a;
-}
-
-.nav-link.active,
-.dropdown-toggle.active {
-  color: #df583a;
-  font-weight: 700;
-}
-
-.nav-link::after,
-.dropdown-toggle::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #df583a;
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after,
-.dropdown-toggle:hover::after {
-  width: 100%;
-}
-
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
+body {
   background-color: #000;
-  display: none;
-  flex-direction: column;
-  padding: 10px 0;
-  border-radius: 8px;
-  min-width: 150px;
-  z-index: 1000;
+  color: white;
+  font-family: "Inter", sans-serif;
 }
 
-.dropdown-item {
-  font-size: 18px;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-}
-
-.dropdown-item:hover {
-  background-color: #df583a;
-}
-
-.nav-link.dropdown:hover .dropdown-menu,
-.dropdown-toggle:hover + .dropdown-menu {
-  display: flex;
-}
-
-/* PROFILE ICON */
-.user-icon {
-  width: 35px;
-  height: 35px;
-  object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.user-icon:hover {
-  transform: scale(1.1);
-}
 
 /* WORKOUT CONTENT */
 .workout-content {
@@ -233,6 +95,6 @@ body {
   }
 
   .nav-link.dropdown:hover .dropdown-menu {
-    display: block;
+    display: block; 
   }
 }
