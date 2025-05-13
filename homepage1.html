@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +9,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="homepage1.css" />
+    <link rel="stylesheet" href="fitness_chat.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   </head>
   <body>
     <div class="page-container">
@@ -50,8 +51,34 @@
           alt="Fitness Hero Image"
         />
       </main>
+
+      <!-- Chat Widget -->
+      <div class="chat-widget-button" id="chat-widget-button">
+        <i class="fas fa-comments"></i>
+      </div>
+      
+      <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+          <h1>Fitness Assistant</h1>
+          <p>Ask me about workouts, nutrition, and fitness!</p>
+          <button class="close-button" id="close-chat">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input-container">
+          <textarea 
+            id="user-input" 
+            placeholder="Type your fitness question here..." 
+            rows="1"
+            maxlength="500"
+          ></textarea>
+          <button id="send-button" type="button">Send</button>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
+    <script src="fitness_chat.js"></script>
   </body>
 </html>
 

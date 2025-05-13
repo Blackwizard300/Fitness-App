@@ -6,6 +6,13 @@
   <title>VASK Fitness</title>
   <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="homepage.css" />
+  <link rel="stylesheet" href="fitness_chat.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Load the Google AI Library first -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@google/generative-ai@0.1.3/dist/generative-ai.min.js"></script>
+  <!-- Load our scripts after -->
+  <script defer src="script.js"></script>
+  <script defer src="fitness_chat.js"></script>
 </head>
 <body>
   <div class="page-container">
@@ -26,7 +33,30 @@
       </section>
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56b702e21b6d2dae7b20e243b8fd87951a49e41d?placeholderIfAbsent=true" alt="Hero Image" class="hero-image" />
     </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget-button" id="chat-widget-button">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chat-container" id="chat-container">
+      <div class="chat-header">
+        <h1>Fitness Assistant</h1>
+        <p>Ask me about workouts, nutrition, and fitness!</p>
+        <button class="close-button" id="close-chat">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chat-messages" id="chat-messages"></div>
+      <div class="chat-input-container">
+        <textarea 
+          id="user-input" 
+          placeholder="Type your fitness question here..." 
+          rows="1"
+          maxlength="500"
+        ></textarea>
+        <button id="send-button" type="button">Send</button>
+      </div>
+    </div>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>

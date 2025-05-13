@@ -235,7 +235,7 @@ $firstname = $_SESSION['user_name'] ?? null;
         <a href="weight gain meal.html">Weight Gain</a>
         <a href="weight loss meal.html">Weight Loss</a>
       </div>
-    </div>
+    </div> 
 
     <div class="dropdown">
       <div class="nav-link dropdown-toggle">Workout</div>
