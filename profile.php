@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.html');
+    exit();
+}
+
+require_once 'db.php';
+
+// Get user data
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT * FROM users WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+
+// Close the database connection
+$stmt->close();
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +39,13 @@
       </div>
 
       <div class="nav-menu">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">About us</a>
+        <a href="homepage1.html" class="nav-link">Home</a>
+        <a href="aboutus2.html" class="nav-link">About us</a>
 
         <div class="nav-link dropdown">
           <a href="#" class="dropdown-toggle">Meal</a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Weight Gain</a>
+            <a href="weight gain meal.html" class="dropdown-item">Weight Gain</a>
             <a href="#" class="dropdown-item">Weight Loss</a>
           </div>
         </div>
@@ -50,43 +74,43 @@
       <form action="update_profile.php" method="POST" class="profile-details">
         <div class="column">
           <div class="detail-group">
-            <p class="detail-label">First Name:</p>
-            <input type="text" name="firstname" class="detail-input" required>
+            <label class="detail-label">First Name:</label>
+            <input type="text" name="firstname" class="detail-input" value="<?php echo htmlspecialchars($user['firstname']); ?>" required>
           </div>
           <div class="detail-group">
-            <p class="detail-label">Last Name:</p>
-            <input type="text" name="lastname" class="detail-input" required>
+            <label class="detail-label">Last Name:</label>
+            <input type="text" name="lastname" class="detail-input" value="<?php echo htmlspecialchars($user['lastname']); ?>" required>
           </div>
           <div class="detail-group">
-            <p class="detail-label">Display Name:</p>
-            <input type="text" name="display_name" class="detail-input">
+            <label class="detail-label">Display Name:</label>
+            <input type="text" name="display_name" class="detail-input" value="<?php echo htmlspecialchars($user['display_name']); ?>">
           </div>
           <div class="detail-group">
-            <p class="detail-label">Email:</p>
-            <input type="email" name="email" class="detail-input" readonly>
+            <label class="detail-label">Email:</label>
+            <input type="email" name="email" class="detail-input" value="<?php echo htmlspecialchars($user['email']); ?>" readonly>
           </div>
         </div>
         <div class="column">
           <div class="detail-group">
-            <p class="detail-label">Age:</p>
-            <input type="number" name="age" class="detail-input" min="1" max="120">
+            <label class="detail-label">Age:</label>
+            <input type="number" name="age" class="detail-input" value="<?php echo htmlspecialchars($user['age']); ?>" min="1" max="120">
           </div>
           <div class="detail-group">
-            <p class="detail-label">Gender:</p>
+            <label class="detail-label">Gender:</label>
             <select name="gender" class="detail-input">
               <option value="">Select Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
+              <option value="male" <?php echo $user['gender'] === 'male' ? 'selected' : ''; ?>>Male</option>
+              <option value="female" <?php echo $user['gender'] === 'female' ? 'selected' : ''; ?>>Female</option>
+              <option value="other" <?php echo $user['gender'] === 'other' ? 'selected' : ''; ?>>Other</option>
             </select>
           </div>
           <div class="detail-group">
-            <p class="detail-label">Weight (kg):</p>
-            <input type="number" name="weight" class="detail-input" step="0.1">
+            <label class="detail-label">Weight (kg):</label>
+            <input type="number" name="weight" class="detail-input" value="<?php echo htmlspecialchars($user['weight']); ?>" step="0.1">
           </div>
           <div class="detail-group">
-            <p class="detail-label">Height (cm):</p>
-            <input type="number" name="height" class="detail-input" step="0.1">
+            <label class="detail-label">Height (cm):</label>
+            <input type="number" name="height" class="detail-input" value="<?php echo htmlspecialchars($user['height']); ?>" step="0.1">
           </div>
         </div>
         <button type="submit" class="update-button">Update Profile</button>
@@ -102,4 +126,4 @@
     </div>
   </main>
 </body>
-</html>
+</html> 

@@ -237,13 +237,14 @@ $firstname = $_SESSION['user_name'] ?? null;
       </div>
     </div> 
 
-    <div class="dropdown">
+    
+   <div class="dropdown">
       <div class="nav-link dropdown-toggle">Workout</div>
       <div class="dropdown-menu">
-        <a href="weight gain meal.html">Weight Gain</a>
-        <a href="#">Weight Loss</a>
+        <a href="workout2.html">Weight Gain</a>
+        <a href="workout.html">Weight Loss</a>
       </div>
-    </div>
+    </div> 
 
     <?php if ($firstname === null): ?>
       <a href="signup.html" class="nav-link highlight">Register now</a>
