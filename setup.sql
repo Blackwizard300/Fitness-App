@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS users (
 
 -- Add new columns to existing table if they don't exist
 ALTER TABLE users
-ADD COLUMN IF NOT EXISTS display_name VARCHAR(100),
 ADD COLUMN IF NOT EXISTS age INT,
 ADD COLUMN IF NOT EXISTS gender VARCHAR(20),
 ADD COLUMN IF NOT EXISTS weight DECIMAL(5,2),

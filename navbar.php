@@ -1,6 +1,25 @@
 <?php
 session_start();
 $firstname = $_SESSION['user_name'] ?? null;
+
+if ($firstname !== null) {
+    require_once 'db.php';
+    
+    // Get user's profile image
+    $user_id = $_SESSION['user_id'];
+    $sql = "SELECT profile_image FROM users WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+    
+    $profile_image = !empty($user['profile_image']) ? $user['profile_image'] : 
+        "https://cdn.builder.io/api/v1/image/assets/TEMP/13ee4f60030d35b5687c38262d8a815b99cc42eb?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b";
+    
+    $stmt->close();
+    $conn->close();
+}
 ?>
 
 <style>
@@ -144,6 +163,7 @@ $firstname = $_SESSION['user_name'] ?? null;
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid #df583a;
   }
 
   .user-profile {
@@ -249,19 +269,18 @@ $firstname = $_SESSION['user_name'] ?? null;
     <?php if ($firstname === null): ?>
       <a href="signup.html" class="nav-link highlight">Register now</a>
     <?php else: ?>
-      <div class="dropdown user-profile">
-        <div class="nav-link dropdown-toggle profile-toggle">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/13ee4f60030d35b5687c38262d8a815b99cc42eb?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b"
-            alt="User Profile"
-            class="profile-icon"
-          />
-          <span class="welcome-text">Welcome, <?= htmlspecialchars($firstname) ?></span>
+      <a href="#">
+        <div class="dropdown user-profile">
+          <div class="nav-link dropdown-toggle profile-toggle">
+            <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="User Profile" class="profile-icon" />
+            <span class="welcome-text">Welcome, <?php echo htmlspecialchars($firstname); ?></span>
+          </div>
+          <div class="dropdown-menu">
+            <a href="profile.html">Profile</a>
+            <a href="logout.php">Logout</a>
+          </div>
         </div>
-        <div class="dropdown-menu">
-          <a href="logout.php">Logout</a>
-        </div>
-      </div>
+      </a>
     <?php endif; ?>
   </nav>
 </header>

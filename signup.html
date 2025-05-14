@@ -6,6 +6,22 @@
   <title>VASK FITNESS - Sign Up</title>
   <link rel="stylesheet" href="signup.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Crimson+Text:wght@700&family=Inder&family=Inconsolata:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    .error-message {
+      background-color: rgba(220, 53, 69, 0.1);
+      border: 1px solid #dc3545;
+      color: #dc3545;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 14px;
+      display: none;
+    }
+    .error-message.show {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +38,10 @@
     <!-- SIGNUP FORM -->
     <div class="signup-form-wrapper">
       <h2 class="signup-heading">Sign Up</h2>
-      <form class="signup-form" action="./register.php" method="post">
+      
+      <div id="errorMessage" class="error-message"></div>
+
+      <form id="signupForm" class="signup-form">
         <div class="form-group">
           <label for="firstName" class="form-label">First Name</label>
           <input type="text" id="firstName" class="form-input" name="firstname" required />
@@ -58,6 +77,63 @@
     </div>
 
   </main>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const errorMessage = document.getElementById('errorMessage');
+      
+      try {
+        const response = await fetch('./register.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          window.location.href = data.redirect;
+        } else {
+          errorMessage.textContent = data.message;
+          errorMessage.classList.add('show');
+        }
+      } catch (error) {
+        errorMessage.textContent = 'An error occurred. Please try again.';
+        errorMessage.classList.add('show');
+      }
+    });
+
+    // Function to validate email format
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    // Add real-time email validation
+    document.getElementById('email').addEventListener('input', function(e) {
+      const errorMessage = document.getElementById('errorMessage');
+      if (this.value && !validateEmail(this.value)) {
+        errorMessage.textContent = 'Please enter a valid email address';
+        errorMessage.classList.add('show');
+      } else {
+        errorMessage.classList.remove('show');
+      }
+    });
+
+    // Add real-time phone validation
+    document.getElementById('phone').addEventListener('input', function(e) {
+      const errorMessage = document.getElementById('errorMessage');
+      const phoneNumber = this.value.replace(/\D/g, ''); // Remove non-digits
+      if (phoneNumber.length < 10) {
+        errorMessage.textContent = 'Please enter a valid phone number';
+        errorMessage.classList.add('show');
+      } else {
+        errorMessage.classList.remove('show');
+      }
+    });
+  </script>
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,24 +8,39 @@
   <link rel="stylesheet" href="login.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Crimson+Text&family=Inter&family=Inconsolata:wght@800&display=swap" rel="stylesheet"/>
+  <style>
+    .error-message {
+      background-color: rgba(220, 53, 69, 0.1);
+      border: 1px solid #dc3545;
+      color: #dc3545;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 14px;
+      display: none;
+    }
+    .error-message.show {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
   <main class="login-container">
-
     <!-- Header -->
     <header class="site-header">
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2?placeholderIfAbsent=true" alt="Logo" class="logo"/>
       <h1 class="brand-name">VASK FITNESS</h1>
     </header>
 
-
     <!-- Login Form -->
     <section class="login-form-container">
       <h2 class="login-title">Login</h2>
 
-  <form class="login-form" action="./login.php" method="post">
+      <div id="errorMessage" class="error-message"></div>
 
+      <form id="loginForm" class="login-form">
         <!-- Email -->
         <div class="form-group">
           <label for="email" class="form-label">Email</label>
@@ -42,7 +58,6 @@
 
         <!-- Login button -->
         <button type="submit" class="login-button">Login</button>
-
       </form>
     </section>
 
@@ -50,7 +65,39 @@
     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/37b44e685a8b9821adbc5f5629db1e334bed0493?placeholderIfAbsent=true" 
          alt="Bodybuilder Background" 
          class="background-image"/>
-
   </main>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+      
+      try {
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('password', password);
+        
+        const response = await fetch('./login.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          window.location.href = data.redirect;
+        } else {
+          errorMessage.textContent = data.message;
+          errorMessage.classList.add('show');
+        }
+      } catch (error) {
+        errorMessage.textContent = 'An error occurred. Please try again.';
+        errorMessage.classList.add('show');
+      }
+    });
+  </script>
 </body>
 </html>

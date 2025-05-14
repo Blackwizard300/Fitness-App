@@ -5,39 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VASK FITNESS - Profile</title>
   <link rel="stylesheet" href="profile.css" />
+  <style>
+    .profile-pic-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      cursor: pointer;
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ff6b00;
+    }
+
+    .profile-pic-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .profile-pic-container:hover .profile-pic-overlay {
+      opacity: 1;
+    }
+
+    .profile-pic-overlay span {
+      color: white;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    #image-upload {
+      display: none;
+    }
+
+    .message {
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+      text-align: center;
+      font-size: 14px;
+      display: none;
+    }
+    .message.show {
+      display: block;
+    }
+    .success {
+      background-color: rgba(40, 167, 69, 0.1);
+      border: 1px solid #28a745;
+      color: #28a745;
+    }
+    .error {
+      background-color: rgba(220, 53, 69, 0.1);
+      border: 1px solid #dc3545;
+      color: #dc3545;
+    }
+  </style>
 </head>
 <body>
-  <header class="nav-header">
-    <nav class="nav-container">
-      <div class="nav-brand">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2" alt="Vask Fitness Logo" class="brand-logo" />
-        <h1 class="brand-name">VASK FITNESS</h1>
-      </div>
-
-      <div class="nav-menu">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">About us</a>
-
-        <div class="nav-link dropdown">
-          <a href="#" class="dropdown-toggle">Meal</a>
-          <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Weight Gain</a>
-            <a href="#" class="dropdown-item">Weight Loss</a>
-          </div>
-        </div>
-
-        <div class="nav-link dropdown">
-          <a href="#" class="dropdown-toggle">Workout</a>
-          <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Weight Gain</a>
-            <a href="#" class="dropdown-item">Weight Loss</a>
-          </div>
-        </div>
-
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/70dabb4641fdacdc5e401a2306246c2dd71813c0" class="user-icon" alt="User Icon" />
-      </div>
-    </nav>
-  </header>
+  <header class="site-header" id="site-header">
+  
+      </header>
 
   <main class="profile-page">
     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/04dca3f3539d4f4b238610897fe19e1e0e6b74a9" class="background-image" alt="Profile Background" />
@@ -45,61 +85,208 @@
     <h2 class="profile-title">Profile</h2>
 
     <div class="profile-section">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/15bd93239546b06f33ca3cec6c1b6fc5ae2dba60" class="profile-pic" alt="User Picture" />
+      <div class="profile-pic-container" onclick="document.getElementById('image-upload').click()">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/13ee4f60030d35b5687c38262d8a815b99cc42eb?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b" class="profile-pic" id="profile-image" alt="User Picture" />
+        <div class="profile-pic-overlay">
+          <span>Click to change<br>profile picture</span>
+        </div>
+        <input type="file" id="image-upload" accept="image/*" onchange="handleImageUpload(this)">
+      </div>
 
-      <form action="update_profile.php" method="POST" class="profile-details">
+      <div id="successMessage" class="message success"></div>
+      <div id="errorMessage" class="message error"></div>
+
+      <form id="profileForm" action="update_profile.php" method="POST" class="profile-details" enctype="multipart/form-data">
+        <input type="hidden" name="profile_image_data" id="profile_image_data">
         <div class="column">
           <div class="detail-group">
             <p class="detail-label">First Name:</p>
-            <input type="text" name="firstname" class="detail-input" required>
+            <input type="text" name="firstname" id="firstname" class="detail-input" required>
           </div>
           <div class="detail-group">
             <p class="detail-label">Last Name:</p>
-            <input type="text" name="lastname" class="detail-input" required>
-          </div>
-          <div class="detail-group">
-            <p class="detail-label">Display Name:</p>
-            <input type="text" name="display_name" class="detail-input">
+            <input type="text" name="lastname" id="lastname" class="detail-input" required>
           </div>
           <div class="detail-group">
             <p class="detail-label">Email:</p>
-            <input type="email" name="email" class="detail-input" readonly>
+            <input type="email" name="email" id="email" class="detail-input" readonly>
           </div>
+          <div class="detail-group">
+            <p class="detail-label">New Password:</p>
+            <input type="password" name="password" id="password" class="detail-input">
+          </div>
+          
         </div>
         <div class="column">
           <div class="detail-group">
             <p class="detail-label">Age:</p>
-            <input type="number" name="age" class="detail-input" min="1" max="120">
+            <input type="number" name="age" id="age" class="detail-input" min="1" max="120">
           </div>
           <div class="detail-group">
             <p class="detail-label">Gender:</p>
-            <select name="gender" class="detail-input">
-              <option value="">Select Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
+            <select name="gender" id="gender" class="detail-input">
+              <option value="" style="color: black !important;">Select Gender</option>
+              <option value="male" style="color: black;">Male</option>
+              <option value="female" style="color: black;">Female</option>
+              <option value="other" style="color: black;">Other</option>
             </select>
           </div>
           <div class="detail-group">
             <p class="detail-label">Weight (kg):</p>
-            <input type="number" name="weight" class="detail-input" step="0.1">
+            <input type="number" name="weight" id="weight" class="detail-input" step="0.1">
           </div>
           <div class="detail-group">
             <p class="detail-label">Height (cm):</p>
-            <input type="number" name="height" class="detail-input" step="0.1">
+            <input type="number" name="height" id="height" class="detail-input" step="0.1">
           </div>
+          
+          <button type="submit" class="update-button">Update Profile</button>
         </div>
-        <button type="submit" class="update-button">Update Profile</button>
       </form>
-
-      <?php if (isset($_SESSION['success_message'])): ?>
-        <div class="message success"><?php echo $_SESSION['success_message']; unset($_SESSION['success_message']); ?></div>
-      <?php endif; ?>
-
-      <?php if (isset($_SESSION['error_message'])): ?>
-        <div class="message error"><?php echo $_SESSION['error_message']; unset($_SESSION['error_message']); ?></div>
-      <?php endif; ?>
     </div>
   </main>
+
+  <script>
+    // Function to handle image upload
+    function handleImageUpload(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+          // Update the preview
+          document.getElementById('profile-image').src = e.target.result;
+          
+          // Store the image data for form submission
+          document.getElementById('profile_image_data').value = e.target.result;
+
+          // Upload image immediately
+          uploadImage(input.files[0]);
+        };
+        
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    // Function to upload image
+    function uploadImage(file) {
+      const formData = new FormData();
+      formData.append('profile_image', file);
+
+      fetch('upload_profile_image.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(result => {
+        if (result.error) {
+          showError(result.error);
+        } else {
+          showSuccess('Profile image updated successfully');
+          // Update navbar image if it exists
+          const navProfileImg = document.querySelector('.nav-profile-img');
+          if (navProfileImg) {
+            navProfileImg.src = result.image_url;
+          }
+        }
+      })
+      .catch(error => {
+        showError('Failed to upload image. Please try again.');
+      });
+    }
+
+    // Function to show success message
+    function showSuccess(message) {
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      successMessage.textContent = message;
+      successMessage.classList.add('show');
+      errorMessage.classList.remove('show');
+      
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+      }, 5000);
+    }
+
+    // Function to show error message
+    function showError(message) {
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      errorMessage.textContent = message;
+      errorMessage.classList.add('show');
+      successMessage.classList.remove('show');
+      
+      setTimeout(() => {
+        errorMessage.classList.remove('show');
+      }, 5000);
+    }
+
+    // Function to populate form with user data
+    function populateForm(data) {
+      document.getElementById('firstname').value = data.firstname || '';
+      document.getElementById('lastname').value = data.lastname || '';
+      document.getElementById('email').value = data.email || '';
+      document.getElementById('age').value = data.age || '';
+      document.getElementById('gender').value = data.gender || '';
+      document.getElementById('weight').value = data.weight || '';
+      document.getElementById('height').value = data.height || '';
+      
+      // Update profile image if exists
+      if (data.profile_image && data.profile_image !== 'uploads/default-profile.png') {
+        document.getElementById('profile-image').src = data.profile_image;
+      } else {
+        document.getElementById('profile-image').src = "https://cdn.builder.io/api/v1/image/assets/TEMP/13ee4f60030d35b5687c38262d8a815b99cc42eb?placeholderIfAbsent=true&apiKey=beadebc2327f4b1080f7e8c568788d2b";
+      }
+    }
+
+    // Handle form submission
+    document.getElementById('profileForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      
+      try {
+        const response = await fetch('update_profile.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          showSuccess(result.message);
+          // Update form with new data
+          if (result.data) {
+            populateForm(result.data);
+          }
+        } else {
+          showError(result.message);
+        }
+      } catch (error) {
+        showError('An error occurred. Please try again.');
+      }
+    });
+
+    // Fetch user data when page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('get_profile_data.php')
+        .then(response => response.json())
+        .then(result => {
+          if (result.error) {
+            showError(result.error);
+            if (result.error === 'Not logged in') {
+              window.location.href = 'login.html';
+            }
+          } else {
+            populateForm(result.data);
+          }
+        })
+        .catch(error => {
+          showError('Failed to load profile data');
+        });
+    });
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
