@@ -1,29 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="adminpanel.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - VASK FITNESS</title>
+    <link rel="stylesheet" href="adminpanel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&family=Crimson+Text&family=Inter&family=Inconsolata:wght@800&display=swap" rel="stylesheet"/>
+    <style>
+        .error-message {
+            background-color: rgba(220, 53, 69, 0.1);
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+        .error-message.show {
+            display: block;
+        }
+    </style>
 </head>
-<header class="top-nav">
-  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b7f0eac06a9972a335f3e424144110bec6a3ce4c" alt="Background Image" class="background-image" />
-  <nav class="navigation-bar">
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2" alt="Vask Fitness Logo" class="company-logo" />
-    <h1 class="brand-name">VASK FITNESS</h1>
-    <div class="nav-links">
-      <a href="#" class="nav-item">Home</a>
-      <a href="#" class="nav-item">About us</a>
-      <a href="#" class="nav-item">Meal</a>
-      <a href="#" class="nav-item">Workout</a>
-    </div>
-    <div class="user-profile">
-      <svg width="35" height="32" viewBox="0 0 35 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="profile-icon">
-        <path d="M17.5 18C22.9346 18 27.3438 13.9688 27.3438 9C27.3438 4.03125 22.9346 0 17.5 0C12.0654 0 7.65625 4.03125 7.65625 9C7.65625 13.9688 12.0654 18 17.5 18ZM26.25 20H22.4834C20.9658 20.6375 19.2773 21 17.5 21C15.7227 21 14.041 20.6375 12.5166 20H8.75C3.91699 20 0 23.5812 0 28V29C0 30.6562 1.46973 32 3.28125 32H31.7188C33.5303 32 35 30.6562 35 29V28C35 23.5812 31.083 20 26.25 20Z" fill="white"/>
-      </svg>
-    </div>
-  </nav>
-</header>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="brand-section">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2?placeholderIfAbsent=true" alt="Logo" class="logo"/>
+            <h1 class="brand-name">VASK FITNESS</h1>
+        </div>
+        <nav class="admin-nav">
+            <a href="homepage1.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link active">Admin Panel</a>
+            <a href="logout.php" class="nav-link">Logout</a>
+        </nav>
+    </header>
 
-<main class="admin-content">
-  <h2 class="admin-title">ADMIN PANEL</h2>
-  <div class="admin-actions">
-    <button class="admin-button">Manage Workouts</button>
-    <button class="admin-button">View User Data</button>
-  </div>
-</main>
+    <!-- Main Content -->
+    <main class="admin-container">
+        <h2 class="panel-title">Admin Panel</h2>
+        
+        <div class="admin-controls">
+            <button id="viewUsersBtn" class="admin-button">View All Users</button>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search users...">
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <div class="table">
+            <table id="usersTable" class="users-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Weight (kg)</th>
+                        <th>Height (cm)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('viewUsersBtn').addEventListener('click', fetchUsers);
+        document.getElementById('searchInput').addEventListener('input', filterUsers);
+
+        let allUsers = []; // Store all users for filtering
+
+        async function fetchUsers() {
+            try {
+                const response = await fetch('get_users.php');
+                const data = await response.json();
+                
+                if (data.success) {
+                    allUsers = data.users;
+                    displayUsers(allUsers);
+                } else {
+                    showError(data.message || 'Failed to fetch users');
+                }
+            } catch (error) {
+                showError('An error occurred while fetching users');
+            }
+        }
+
+        function displayUsers(users) {
+            const tbody = document.querySelector('#usersTable tbody');
+            tbody.innerHTML = '';
+
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.id}</td>
+                    <td>${user.firstname}</td>
+                    <td>${user.lastname}</td>
+                    <td>${user.email}</td>
+                    <td>${user.phone}</td>
+                    <td>${user.age || '-'}</td>
+                    <td>${user.gender || '-'}</td>
+                    <td>${user.weight || '-'}</td>
+                    <td>${user.height || '-'}</td>
+                    <td>
+                        <button onclick="deleteUser(${user.id})" class="action-btn delete">Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function filterUsers(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredUsers = allUsers.filter(user => 
+                user.firstname.toLowerCase().includes(searchTerm) ||
+                user.lastname.toLowerCase().includes(searchTerm) ||
+                user.email.toLowerCase().includes(searchTerm)
+            );
+            displayUsers(filteredUsers);
+        }
+
+        function showError(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show');
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        async function deleteUser(userId) {
+            if (!confirm('Are you sure you want to delete this user?')) return;
+
+            try {
+                const response = await fetch('delete_user.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ userId })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    fetchUsers(); // Refresh the table
+                } else {
+                    showError(data.message || 'Failed to delete user');
+                }
+            } catch (error) {
+                showError('An error occurred while deleting user');
+            }
+        }
+
+        function editUser(userId) {
+            // Redirect to edit page or show edit modal
+            window.location.href = `edit_user.php?id=${userId}`;
+        }
+
+        // Fetch users when page loads
+        fetchUsers();
+    </script>
+</body>
+</html>
