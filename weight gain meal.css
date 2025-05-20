@@ -19,6 +19,23 @@ body {
   align-items: center;
   color: #fff;
 }
+.meald{
+     color: #df583a !important;
+  font-weight: 700;
+}
+/* RESET */
+
+body {
+  background-image: url('https://iili.io/3ixLokg.png'); /* Replace with your direct image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Inika', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
 
 /* HEADER */
 .site-header {
@@ -132,6 +149,7 @@ body {
   width: 100%;
   max-width: 1200px;
   padding: 50px 40px;
+  padding-left: 300px; /* Increased more for further right shift */
 }
 
 .section-title {
@@ -144,7 +162,7 @@ body {
 .diet-plan {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 20px;
 }
 
@@ -167,6 +185,7 @@ body {
   font-size: 18px;
   color: #fff;
   margin-bottom: 10px;
+  padding-left: 15px;
 }
 
 /* RESPONSIVE DESIGN */
@@ -178,6 +197,6 @@ body {
 
   .diet-plan {
     flex-direction: column;
-    gap: 20px;
-  }
+    gap: 20px;
+  }
 }

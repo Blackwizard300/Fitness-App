@@ -10,6 +10,10 @@ body {
   background-color: #000;
   font-family: "Inter", sans-serif;
 }
+.aboutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 
 /* HEADER */
 .site-header {

@@ -6,7 +6,7 @@ body {
   color: #fff;
   font-weight: 700;
   min-height: 100vh;
-  font-family: "Inika", serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Header styles */
@@ -15,7 +15,10 @@ body {
   width: 100%;
   z-index: 10;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 .nav-container {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.52);
@@ -112,6 +115,7 @@ body {
 
 /* Main content */
 .workout-content {
+    margin-top: -100px;
   position: relative;
   min-height: 1024px;
   width: 100%;
@@ -130,7 +134,6 @@ body {
 .exercise-list {
   position: relative;
   font-size: 36px;
-  font-family: "Istok Web", -apple-system, Roboto, Helvetica, sans-serif;
   margin-top: 156px;
   margin-left: 66px;
   z-index: 2;
@@ -139,7 +142,14 @@ body {
 .exercise-item {
   margin-bottom: 30px;
 }
-
+.exercise-head {
+  color: rgb(223, 88, 58);
+  font-size: 55px;
+  display: flex;
+  justify-content: center;
+  margin: 60px auto;
+  font-weight: 900;
+}
 .exercise-title {
   color: rgb(223, 88, 58);
   font-size: 36px;

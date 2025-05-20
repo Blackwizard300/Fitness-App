@@ -21,7 +21,10 @@ body {
   align-items: center;
 }
 
-
+.homed{
+     color: #df583a !important;
+  font-weight: 700;
+}
 
 
 /* Hero section */

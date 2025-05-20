@@ -18,7 +18,10 @@ body {
   position: relative;
   z-index: 10;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 .header__content {
   display: flex;
   align-items: center;

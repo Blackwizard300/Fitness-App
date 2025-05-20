@@ -14,7 +14,10 @@ html, body {
 .workout-page {
   position: relative;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 .page-container {
   display: flex;
   flex-direction: column;

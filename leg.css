@@ -15,7 +15,10 @@ html, body {
   font-weight: 700;
   color: #fff;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 /* Workout page */
 .workout-page {
   position: relative;

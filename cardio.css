@@ -15,7 +15,10 @@ body {
   min-height: 100vh;
   overflow: hidden;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 .background-image {
   position: absolute;
   inset: 0;
@@ -169,10 +172,12 @@ body {
 
 .workout-content {
   max-width: 1000px;
-  margin: 60px auto;
   padding: 30px;
+  margin: 60px auto;
   position: relative;
   z-index: 1;
+  gap: 100px;
+  display: flex;
  
   border-radius: 12px;
 }

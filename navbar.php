@@ -87,8 +87,9 @@ if ($firstname !== null) {
   }
 
   .nav-link.active,
-  .nav-link.highlight {
-    color: #df583a;
+  .dropdown-toggle.active,
+  .dropdown-menu a.active {
+    color: #ff6600 !important;
     font-weight: 700;
   }
 
@@ -108,7 +109,6 @@ if ($firstname !== null) {
     width: 100%;
   }
 
-  /* DROPDOWN */
   .dropdown {
     position: relative;
   }
@@ -117,6 +117,7 @@ if ($firstname !== null) {
     display: flex;
     align-items: center;
     gap: 6px;
+    cursor: pointer;
   }
 
   .dropdown-toggle::after {
@@ -140,6 +141,7 @@ if ($firstname !== null) {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   }
 
+  .dropdown.open .dropdown-menu,
   .dropdown:hover .dropdown-menu {
     display: flex;
   }
@@ -157,7 +159,6 @@ if ($firstname !== null) {
     background-color: #df583a;
   }
 
-  /* USER PROFILE */
   .profile-icon {
     width: 32px;
     height: 32px;
@@ -187,15 +188,14 @@ if ($firstname !== null) {
   }
 
   .dropdown-toggle::after {
-  content: none;
-}
+    content: none;
+  }
 
   .user-profile .dropdown-menu {
     right: 0;
     left: auto;
   }
 
-  /* Responsive */
   @media (max-width: 991px) {
     .main-nav {
       flex-wrap: wrap;
@@ -212,81 +212,107 @@ if ($firstname !== null) {
       display: flex;
     }
   }
+
   .search-bar {
-  display: flex;
-  align-items: end;
-  justify-content: end;
-  width: 200px;
-}
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 200px;
+  }
 
-.search-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #fff;
-  background-color: transparent;
-  color: #fff;
-  border-radius: 5px;
-  outline: none;
-}
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+  }
 
-.search-input::placeholder {
-  color: #fff;
-}
+  .search-input::placeholder {
+    color: #fff;
+  }
 </style>
 
 <header class="site-header">
-  <div class="brand">
+  <a href="index.html" style="text-decoration: none;"><div class="brand">
     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b6541ede10c1638f975eb8462cc5781a46fc7e2?placeholderIfAbsent=true" alt="Logo" class="logo" />
     <h1 class="brand-name">VASK FITNESS</h1>
-  </div>
+  </div></a>
 
   <nav class="main-nav">
-    <div class="search-bar">
-              <input type="text" placeholder="Search..." class="search-input" />
-            </div>
-    <a href="homepage.html" class="nav-link active">Home</a>
-    <a href="aboutus1.html" class="nav-link">About us</a>
+    <a href="index.html" class="nav-link homed">Home</a>
+    <a href="aboutus1.html" class="nav-link aboutd">About us</a>
 
-
-    <div class="dropdown">
-      <div class="nav-link dropdown-toggle">Meal</div>
-      <div class="dropdown-menu">
-        <a href="weight gain meal.html">Weight Gain</a>
-        <a href="weight loss meal.html">Weight Loss</a>
+    <?php if ($firstname !== null): ?>
+      <div class="dropdown">
+        <div class="nav-link dropdown-toggle meald">Meal</div>
+        <div class="dropdown-menu">
+          <a href="weight gain meal.html" class="">Weight Gain</a>
+          <a href="weight loss meal.html" class="">Weight Loss</a>
+        </div>
       </div>
-    </div> 
 
-    
-   <div class="dropdown">
-      <div class="nav-link dropdown-toggle">Workout</div>
-      <div class="dropdown-menu">
-        <a href="workout2.html">Weight Gain</a>
-        <a href="workout.html">Weight Loss</a>
+      <div class="dropdown">
+        <div class="nav-link dropdown-toggle workoutd">Workout</div>
+        <div class="dropdown-menu">
+          <a href="workout2.html" class="">Weight Gain</a>
+          <a href="workout.html" class="">Weight Loss</a>
+        </div>
       </div>
-    </div> 
+    <?php endif; ?>
 
     <?php if ($firstname === null): ?>
       <a href="signup.html" class="nav-link highlight">Register now</a>
     <?php else: ?>
-      <a href="#">
-        <div class="dropdown user-profile">
-          <div class="nav-link dropdown-toggle profile-toggle">
-            <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="User Profile" class="profile-icon" />
-            <span class="welcome-text">Welcome, <?php echo htmlspecialchars($firstname); ?></span>
-          </div>
-          <div class="dropdown-menu">
-            <a href="profile.html">Profile</a>
-            <a href="logout.php">Logout</a>
-          </div>
+      <div class="dropdown user-profile">
+        <div class="nav-link dropdown-toggle profile-toggle">
+          <img src="<?= htmlspecialchars($profile_image) ?>" alt="User Profile" class="profile-icon" />
+          <span class="welcome-text">Welcome, <?= htmlspecialchars($firstname) ?></span>
         </div>
-      </a>
+        <div class="dropdown-menu">
+          <a href="profile.html" class="">Profile</a>
+          <a href="logout.php">Logout</a>
+        </div>
+      </div>
     <?php endif; ?>
   </nav>
 </header>
 
-<!-- OPTIONAL: JavaScript to support mobile click toggle -->
 <script>
+  // Helper: Normalize href to just filename, lowercase
+  function normalizeHref(href) {
+    const a = document.createElement('a');
+    a.href = href;
+    return a.pathname.split('/').pop().toLowerCase();
+  }
+
+  const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+
+  // Highlight top-level nav links
+  document.querySelectorAll('.main-nav > a.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && normalizeHref(href) === currentPage) {
+      link.classList.add('active');
+    }
+  });
+
+  // Highlight dropdown-menu links and their toggles
+  document.querySelectorAll('.dropdown-menu a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && normalizeHref(href) === currentPage) {
+      link.classList.add('active');
+      const dropdown = link.closest('.dropdown');
+      if (dropdown) {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        if (toggle) toggle.classList.add('active');
+      }
+    }
+  });
+
+  // Dropdown toggle open/close
   document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', (e) => {
       const dropdown = toggle.closest('.dropdown');
@@ -298,7 +324,6 @@ if ($firstname !== null) {
     });
   });
 
-  // Close dropdowns on click outside
   document.addEventListener('click', () => {
     document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
   });

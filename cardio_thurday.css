@@ -20,7 +20,10 @@ html, body {
   position: relative;
   z-index: 10;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 .nav-content {
   background-color: rgba(0, 0, 0, 0.52);
   border-radius: 10px;

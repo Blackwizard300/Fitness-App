@@ -7,10 +7,12 @@
 }
 
 body {
-  background-color: #000;
+  background: url('https://iili.io/3iByidP.png') no-repeat center center fixed;
+  background-size: cover;
   font-family: "Inika", serif;
   color: #fff;
 }
+
 
 .workout-page {
   background-color: #000;
@@ -18,7 +20,10 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 .page-container {
   position: relative;
   min-height: 1024px;

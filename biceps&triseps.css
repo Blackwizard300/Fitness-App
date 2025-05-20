@@ -18,12 +18,19 @@
 }
 
 body {
-  background-color: #000;
+  background: url('https://iili.io/3iBe8xf.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: white;
   font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 /* WORKOUT CONTENT */
 .workout-content {
   position: relative;

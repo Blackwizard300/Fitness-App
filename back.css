@@ -13,7 +13,10 @@ body {
   width: 100%;
   background-color: #000;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 .nav-content {
   background-color: rgba(0, 0, 0, 0.52);
   display: flex;
@@ -141,7 +144,6 @@ body {
 
 /* Workout Content */
 .workout-content {
-  position: relative;
   padding: 86px 80px;
   min-height: 956px;
   color: #fff;
@@ -158,14 +160,12 @@ body {
 
 .workout-title {
   font-size: 64px;
-  text-align: center;
   color: #df583a;
   margin-bottom: 40px;
 }
 
 .exercise-list {
   max-width: 829px;
-  margin: 0 auto;
   font-size: 36px;
 }
 

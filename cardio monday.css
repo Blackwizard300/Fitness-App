@@ -6,7 +6,10 @@ body {
   font-weight: 700;
   font-family: "Inika", serif;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 /* NAVIGATION */
 .nav-header {
   position: relative;

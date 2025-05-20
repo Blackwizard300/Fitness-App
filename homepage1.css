@@ -19,6 +19,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.homed{
+     color: #df583a !important;
+  font-weight: 700;
+}
 
 /* HEADER */
 .site-header {

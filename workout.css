@@ -21,6 +21,10 @@ body {
   border: none;
   outline: none;
 }
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 
 /* Navigation header */
 .navigation-header {

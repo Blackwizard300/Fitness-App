@@ -6,6 +6,8 @@
   font-weight: 700;
   font-family: "Inika", serif;
 }
+body{
+ background: url('https://iili.io/3ioetGj.png') no-repeat center center fixed;}
 
 .nav-content {
   display: flex;
@@ -16,7 +18,10 @@
   padding-bottom: 377px;
   align-items: stretch;
 }
-
+.workoutd{
+     color: #df583a !important;
+  font-weight: 700;
+}
 @media (max-width: 991px) {
   .nav-content {
     padding-bottom: 100px;

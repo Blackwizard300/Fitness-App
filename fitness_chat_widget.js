@@ -6,7 +6,7 @@ function injectChatWidget() {
         </div>
         <div class="chat-container" id="chat-container">
             <div class="chat-header">
-                <h1>Fitness AI Assistant</h1>
+                <h1>Fitness AI Guru</h1>
                 <p>Ask me anything about fitness, workouts, nutrition, and health!</p>
             </div>
             <div class="chat-messages" id="chat-messages">
@@ -17,7 +17,7 @@ function injectChatWidget() {
                 </div>
             </div>
             <div class="chat-input-container">
-                <textarea id="user-input" placeholder="Type your fitness question here..." rows="2"></textarea>
+                <textarea id="user-input" placeholder="Type your fitness question." rows="2"></textarea>
                 <button id="send-button">Send</button>
             </div>
         </div>
@@ -30,7 +30,7 @@ function injectChatWidget() {
     document.body.appendChild(widgetContainer);
 
     // Load required resources
-    loadResource('https://cdn.jsdelivr.net/npm/@google/generative-ai', 'js');
+    loadResource('chatting.min.js', 'js');
     loadResource('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', 'css');
     loadResource('fitness_chat.css', 'css');
     loadResource('fitness_chat.js', 'js');
